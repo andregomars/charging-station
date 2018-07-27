@@ -13,7 +13,7 @@ import { RegisterComponent } from './views/register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -49,9 +49,13 @@ export const routes: Routes = [
     // component: DefaultLayoutComponent,
     component: SimpleLayoutComponent,
     data: {
-      title: 'Home'
+      title: ''
     },
     children: [
+      {
+        path: 'main',
+        loadChildren: './views/main/main.module#MainModule'
+      },
       {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
