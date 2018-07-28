@@ -8,7 +8,6 @@ import { HttpClient  } from '@angular/common/http';
 export class StationListComponent implements OnInit {
   rootUrl = 'assets/data';
   rows = [];
-  joke = 'knock knock';
 
   constructor(
     private http: HttpClient

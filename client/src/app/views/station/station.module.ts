@@ -7,22 +7,20 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgxGaugeModule } from 'ngx-gauge';
 
-import { StationListComponent } from './station-list.component';
-import { StationModule } from './../station/station.module';
-import { StationListRoutingModule } from './station-list-routing.module';
+import { StationComponent } from './station.component';
+import { StationRoutingModule } from './station-routing.module';
 
 @NgModule({
   imports: [
     HttpClientModule,
     FormsModule,
-    StationListRoutingModule,
-    StationModule,
+    StationRoutingModule,
     ChartsModule,
     NgxGaugeModule,
     NgxDatatableModule,
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ StationListComponent ]
+  declarations: [ StationComponent ]
 })
-export class StationListModule { }
+export class StationModule { }
