@@ -7,6 +7,7 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
   templateUrl: 'main.component.html'
 })
 export class MainComponent implements OnInit {
+  radioModel = 'Month';
 
   // lineChart1
   public lineChart1Data: Array<any> = [
@@ -241,7 +242,7 @@ export class MainComponent implements OnInit {
       position: 'nearest',
       callbacks: {
         labelColor: function(tooltipItem, chart) {
-          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor }
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
         }
       }
     },
@@ -385,5 +386,4 @@ export class MainComponent implements OnInit {
     }
   }
 
-  radioModel: string = 'Month';
 }
