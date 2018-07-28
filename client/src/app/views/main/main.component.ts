@@ -211,7 +211,7 @@ export class MainComponent implements OnInit {
 
   // mainChart
 
-  public mainChartElements = 27;
+  public mainChartElements = 24;
   public mainChartData1: Array<number> = [];
   public mainChartData2: Array<number> = [];
   public mainChartData3: Array<number> = [];
@@ -231,7 +231,8 @@ export class MainComponent implements OnInit {
     }
   ];
   /* tslint:disable:max-line-length */
-  public mainChartLabels: Array<any> = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Thursday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  // public mainChartLabels: Array<any> = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Thursday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  public mainChartLabels: Array<any> = Array.from(new Array(24), (val, index) => (index).toString().padStart(2, '0'));
   /* tslint:enable:max-line-length */
   public mainChartOptions: any = {
     tooltips: {
@@ -253,11 +254,11 @@ export class MainComponent implements OnInit {
         gridLines: {
           drawOnChartArea: false,
         },
-        ticks: {
-          callback: function(value: any) {
-            return value.charAt(0);
-          }
-        }
+        // ticks: {
+        //   callback: function(value: any) {
+        //     return value.charAt(0);
+        //   }
+        // }
       }],
       yAxes: [{
         ticks: {
@@ -382,7 +383,7 @@ export class MainComponent implements OnInit {
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
       this.mainChartData2.push(this.random(80, 100));
-      this.mainChartData3.push(65);
+      this.mainChartData3.push(55);
     }
   }
 
