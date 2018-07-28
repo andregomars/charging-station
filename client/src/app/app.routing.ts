@@ -49,7 +49,7 @@ export const routes: Routes = [
     // component: DefaultLayoutComponent,
     component: SimpleLayoutComponent,
     data: {
-      title: ''
+      title: 'Home'
     },
     children: [
       {

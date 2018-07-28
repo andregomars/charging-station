@@ -57,6 +57,7 @@ import { environment } from '../environments/environment';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    // NgxDatatableModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [

@@ -1,0 +1,40 @@
+[
+    {
+        "code": "A01",
+        "status": "Charging",
+        "time": "2018-03-21 04:13:06",
+        "value": 55 
+    },
+    {
+        "code": "A02",
+        "status": "Alert",
+        "time": "2018-03-21 04:13:06",
+        "value": 0 
+    },
+    {
+        "code": "A03",
+        "status": "Charging",
+        "time": "2018-03-21 04:13:06",
+        "value": 75 
+    },
+    {
+        "code": "A04",
+        "status": "Waiting",
+        "time": "2018-03-21 04:13:06",
+        "value": 0 
+    },
+    {
+        "code": "A05",
+        "status": "Charging",
+        "time": "2018-03-21 04:13:06",
+        "value": 20 
+    },
+    {
+        "code": "A06",
+        "status": "Complete",
+        "time": "2018-03-21 04:13:06",
+        "value": 100 
+    }
+]
+
+

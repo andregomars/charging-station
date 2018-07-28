@@ -244,6 +244,10 @@
     semver "^5.3.0"
     semver-intersect "^1.1.2"
 
+"@swimlane/ngx-datatable@^13.0.1":
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/@swimlane/ngx-datatable/-/ngx-datatable-13.0.1.tgz#6e949e19130b2054e2715d30d158751c4fbaa502"
+
 "@types/jasmine@*", "@types/jasmine@^2.8.8":
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.8.tgz#bf53a7d193ea8b03867a38bfdb4fbb0e0bf066c9"
@@ -4325,6 +4329,10 @@ ng2-charts@^1.6.0:
 ngx-bootstrap@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-3.0.1.tgz#e98d2fc6340f32a9d358cd08e8fda7dcb23bdab3"
+
+ngx-gauge@^1.0.0-beta.4:
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/ngx-gauge/-/ngx-gauge-1.0.0-beta.4.tgz#cfbaab6660430926dc0814a00d1a06c9bdd6e581"
 
 ngx-perfect-scrollbar@^6.2.0:
   version "6.2.0"

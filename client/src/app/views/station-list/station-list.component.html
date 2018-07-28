@@ -11,10 +11,10 @@
                 </div>
                 <div class="btn-group p-2 border">
                   <input type="button" aria-label="Last name" class="btn btn-primary" value="All">
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Charging"/>
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Complete"/>
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Alert"/>
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Waiting"/>
+                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Charging" />
+                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Complete" />
+                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Alert" />
+                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Waiting" />
                 </div>
               </div>
             </div>
@@ -23,17 +23,98 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Station#</span>
                 </div>
-                <input type="text" size="5" class="form-contrl" /> 
+                <input type="text" size="5" class="form-contrl" />
                 <div class="input-group-append">
-                  <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  <button class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <ngx-datatable class="material col m-3" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+              <ngx-datatable-column name="Stations">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="row">
+                    <div class="col">
+                      {{row['code']}}
+                    </div>
+                    <div class="col">
+                      {{row['status']}}
+                    </div>
+                    <div class="col">
+                      {{row['time']}}
+                    </div>
+                    <div class="col">
+                      {{row['value']}}
+                    </div>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-xl-4"></div>
+    <div class="col-12 col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row no-gutters">
+            <div class="col">
+              <ngx-gauge size="100" [type]="'semi'" [value]="68.3" [label]="'kWh'" [thick]="6" [append]="">
+              </ngx-gauge>
+            </div>
+            <div class="col">
+              <ngx-gauge size="100" [type]="'semi'" [value]="85" [label]="'V'" [thick]="6" [append]="">
+              </ngx-gauge>
+            </div>
+            <div class="col">
+              <ngx-gauge size="100" [type]="'semi'" [value]="57" [label]="'A'" [thick]="6" [append]="">
+              </ngx-gauge>
+            </div>
+          </div>
+          <div class="row pl-1">
+            <div class="col">
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Total Today kWh</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">This month kWh</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Total kWh</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row mt-4">
+                <h4 class="col pl-0">Limitations</h4>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Max charger</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Start time</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Max current</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Max kWh</h5>
+                <h5 class="col-3"></h5>
+              </div>
+              <div class="row">
+                <h5 class="col-7 text-white bg-info pb-1">Daily Max kWh</h5>
+                <h5 class="col-3"></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
