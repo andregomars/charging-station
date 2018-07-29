@@ -1,0 +1,34 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+$input-font-small: 12.6px;
+$input-text-width: 110px;
+$card-font-small: 12.6px;
+
+.cs-input-group {
+    @extend .input-group; 
+    @extend .py-1;
+}
+
+.cs-input-group div {
+    @extend .input-group-prepend;
+}
+
+.cs-input-group div span {
+    @extend .input-group-text;
+    font-size: $input-font-small;
+    width: $input-text-width; 
+}
+
+.cs-input-group input[type="text"] {
+    @extend .form-control;
+    font-size: $input-font-small;
+}
+
+.card-columns {
+    font-size: $card-font-small; 
+    @include media-breakpoint-up(xs) {
+        column-count: 1;
+    }
+    @include media-breakpoint-up(md) {
+        column-count: 2;
+    }
+}

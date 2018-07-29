@@ -1,6 +1,6 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-12 col-xl-8">
+    <div class="col-12 col-xl-9">
       <div class="card">
         <div class="card-body">
           <div class="row">
@@ -32,8 +32,39 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <ngx-datatable class="material col m-3" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+          <div class="row mt-3">
+            <div class="col">
+              <div class="card-columns">
+                <div class="card" *ngFor="let s of stations$ | async">
+                  <div class="card-body">
+                    <div class="row no-gutters">
+                      <a class="col-2" [routerLink]="['station', s.code]">
+                        <strong>{{s.code}}</strong>
+                      </a>
+                      <!-- <div class="col-2">
+                        <strong>{{s.code}}</strong>
+                      </div> -->
+                      <div class="col-3" [ngSwitch]="s.status">
+                        <i *ngSwitchCase="'waiting'" class="fa fa-circle text-warning"></i>
+                        <i *ngSwitchCase="'charging'" class="fa fa-circle text-success"></i>
+                        <i *ngSwitchCase="'complete'" class="fa fa-circle text-primary"></i>
+                        <i *ngSwitchCase="'alert'" class="fa fa-circle text-danger"></i>
+                        <i *ngSwitchDefault class="fa fa-circle text-mute"></i>
+                        {{s.status | titlecase}}</div>
+                      <div class="col-3">{{s.time | date:'MM/dd hh:mm'}}</div>
+                      <div class="col-4">
+                        <div class="progress border border-dark">
+                          <div class="progress-bar bg-success" [style.width.%]="s.value">
+                            <small>{{s.value}}%</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <ngx-datatable class="material col m-3" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
               <ngx-datatable-column name="Stations">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   <div class="row">
@@ -52,64 +83,127 @@
                   </div>
                 </ng-template>
               </ngx-datatable-column>
-            </ngx-datatable>
+            </ngx-datatable> -->
           </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-xl-4">
+    <div class="col-12 col-xl-3">
       <div class="card">
         <div class="card-body">
           <div class="row no-gutters">
-            <div class="col">
+            <div class="col-6">
               <ngx-gauge size="100" [type]="'semi'" [value]="68.3" [label]="'kWh'" [thick]="6" [append]="">
               </ngx-gauge>
             </div>
-            <div class="col">
+            <div class="col-6">
+              <ngx-gauge size="100" [type]="'semi'" [value]="17.4" [label]="'kWh'" [thick]="6" [append]="">
+              </ngx-gauge>
+            </div>
+            <div class="col-6">
               <ngx-gauge size="100" [type]="'semi'" [value]="85" [label]="'V'" [thick]="6" [append]="">
               </ngx-gauge>
             </div>
-            <div class="col">
+            <div class="col-6">
               <ngx-gauge size="100" [type]="'semi'" [value]="57" [label]="'A'" [thick]="6" [append]="">
               </ngx-gauge>
             </div>
+
           </div>
           <div class="row pl-1">
             <div class="col">
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Total Today kWh</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Total Today kWh
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">This month kWh</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      This month kWh
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Total kWh</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Total kWh
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row mt-4">
                 <h4 class="col pl-0">Limitations</h4>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Max charger</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Max chargers
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Start time</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Start time
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Max current</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      End time
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Max kWh</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Max current
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
               <div class="row">
-                <h5 class="col-7 text-white bg-info pb-1">Daily Max kWh</h5>
-                <h5 class="col-3"></h5>
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Max kWh
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Daily max kWh
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
               </div>
             </div>
           </div>
