@@ -23,7 +23,5 @@ export class StationListComponent implements OnInit {
 
   loadData() {
     this.stations$ = this.http.get<any>(`${ this.rootUrl }/stations.json`);
-    // return this.http.get<any>(`${ this.rootUrl }/stations.json`)
-    //   .subscribe(data => this.rows = data.splice(0, 5));
   }
 }

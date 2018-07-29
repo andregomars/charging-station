@@ -57,54 +57,42 @@
   </div>
   <!--/.row-->
   <div class="row">
-    <div class="col col-xl-9">
+    <div class="col-12 col-xl-9">
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col col-xl-6">
-              <!-- <div class="row">
-                <div class="col">
-                  <h4 class=" mb-0">Today's kWh</h4>
-                  <div class="small text-muted">November 2017</div>
-                </div>
-              </div> -->
-              <div class="chart-wrapper" style="height:200px;margin-top:40px;">
+            <div class="col-12 col-xl-6">
+              <div class="row">
+                <h6 class="col">Today's kWh</h6>
+              </div>
+              <div class="chart-wrapper"> 
                 <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
                   [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
-            <div class="col col-xl-6">
-              <!-- <div class="row">
-                <div class="col">
-                  <h4 class=" mb-0">Today's current</h4>
-                  <div class="small text-muted">November 2017</div>
-                </div>
-              </div> -->
-              <div class="chart-wrapper" style="height:200px;margin-top:40px;">
+            <div class="col-12 col-xl-6">
+               <div class="row">
+                <h6 class="col">Today's current</h6>
+              </div>
+              <div class="chart-wrapper"> 
                 <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
                   [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
-            <div class="col col-xl-6">
-              <!-- <div class="row">
-                <div class="col">
-                  <h4 class="mb-0">Last two week's kWh</h4>
-                  <div class="small text-muted">November 2017</div>
-                </div>
-              </div> -->
-              <div class="chart-wrapper" style="height:200px;margin-top:40px;">
+            <div class="col-12 col-xl-6">
+                <div class="row">
+                <h6 class="col">Last two week's kWh</h6>
+              </div>
+              <div class="chart-wrapper">
                 <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
                   [legend]="mainChartLegend" [chartType]="'bar'"></canvas>
               </div>
             </div>
-            <div class="col col-xl-6">
-              <!-- <div class="row">
-                <div class="col">
-                  <h4 class="mb-0">Last two week's alert times</h4>
-                  <div class="small text-muted">November 2017</div>
-                </div>
-              </div> -->
-              <div class="chart-wrapper" style="height:200px;margin-top:40px;">
+            <div class="col-12 col-xl-6">
+                 <div class="row">
+                <h6 class="col">Last two week's alert times</h6>
+              </div>
+              <div class="chart-wrapper">
                 <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
                   [legend]="mainChartLegend" [chartType]="'bar'"></canvas>
               </div>
@@ -113,33 +101,99 @@
         </div>
       </div>
     </div>
-    <div class="col col-xl-3 pt-4 pl-4">
+    <div class="col-12 col-xl-3 pt pl-4">
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Current time</h4>
-        <h3 class="col-3">15:32</h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Current time
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="cs-input-group">
+          <div>
+            <span>
+              This month kWh
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Total kWh
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
       <div class="row mt-4">
-        <h2 class="col pl-0">Limitations</h2>
+        <h4 class="col pl-0">Limitations</h4>
       </div>
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Max charger</h4>
-        <h3 class="col-3"></h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Max chargers
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Start time</h4>
-        <h3 class="col-3"></h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Start time
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Max current</h4>
-        <h3 class="col-3"></h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              End time
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Max kWh</h4>
-        <h3 class="col-3"></h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Max current
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
       <div class="row">
-        <h4 class="col-7 text-white bg-info pb-1">Daily Max kWh</h4>
-        <h3 class="col-3"></h3>
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Max kWh
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="cs-input-group">
+          <div>
+            <span>
+              Daily max kWh
+            </span>
+          </div>
+          <input type="text" value="" />
+        </div>
       </div>
     </div>
   </div>

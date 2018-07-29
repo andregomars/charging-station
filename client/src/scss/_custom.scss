@@ -3,3 +3,56 @@
 @import '~@swimlane/ngx-datatable/release/themes/material.css';
 @import '~@swimlane/ngx-datatable/release/assets/icons.css';
 
+$input-font-small: 12.6px;
+$input-text-width: 110px;
+$input-group-height: 38px;
+
+.cs-input-group {
+    @extend .input-group; 
+    @extend .py-1;
+    height: $input-group-height; 
+}
+
+.cs-input-group div:first-of-type {
+    @extend .input-group-prepend;
+}
+
+.cs-input-group div span {
+    @extend .input-group-text;
+    font-size: $input-font-small;
+    width: $input-text-width; 
+}
+
+.cs-input-group input[type="text"] {
+    @extend .form-control;
+    font-size: $input-font-small;
+}
+
+// search component inherits from cs-input-group
+.cs-input-group-search {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-search div:last-of-type {
+    @extend .input-group-append;
+}
+
+// filter component inherits from cs-input-group
+.cs-input-group-filter {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-filter div:last-of-type {
+    @extend .btn-group;
+    @extend .p-1;
+    @extend .border; 
+}
+
+.cs-input-group-filter div:last-of-type a {
+    // @extend .btn;
+    @extend .nav-link;
+    @extend .pt-1;
+    @extend .d-flex;
+    @extend .flex-row;
+    font-size: $input-font-small;
+}

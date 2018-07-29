@@ -5,27 +5,45 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 col-xl-8">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Filter by</span>
+              <div class="cs-input-group-filter">
+                <div class="">
+                  <span class="">Filter by</span>
                 </div>
-                <div class="btn-group p-2 border">
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="All">
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Charging" />
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Complete" />
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Alert" />
-                  <input type="button" aria-label="Last name" class="btn btn-primary" value="Waiting" />
+                <div class="">
+                  <a href="javascript:void(0)">
+                    <small>All</small>
+                  </a>
+                  <a href="javascript:void(0)">
+                    <i class="fa fa-search fa fa-circle text-warning px-1"></i>
+                    <small class="d-none d-lg-block">Waiting</small>
+                  </a>
+                  <a href="javascript:void(0)">
+                    <i class="fa fa-search fa fa-circle text-success px-1"></i>
+                    <small class="d-none d-lg-block">Charging</small>
+                  </a>
+                  <a href="javascript:void(0)">
+                    <i class="fa fa-search fa fa-circle text-primary px-1"></i>
+                    <small class="d-none d-lg-block">Complete</small>
+                  </a>
+                  <a href="javascript:void(0)">
+                    <i class="fa fa-search fa fa-circle text-danger px-1"></i>
+                    <small class="d-none d-lg-block">Alert</small>
+                  </a>
+                  <!-- <input type="button" value="Charging" /> -->
+                  <!-- <input type="button" value="Complete" />
+                  <input type="button" value="Alert" />
+                  <input type="button" value="Waiting" /> -->
                 </div>
               </div>
             </div>
             <div class="col-12 col-xl-4">
-              <div class="input-group pt-2">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Station#</span>
+              <div class="cs-input-group-search">
+                <div>
+                  <span>Station#</span>
                 </div>
                 <input type="text" size="5" class="form-contrl" />
-                <div class="input-group-append">
-                  <button class="btn btn-primary">
+                <div>
+                  <button class="btn btn-primary pt-0">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>
@@ -36,23 +54,20 @@
             <div class="col">
               <div class="card-columns">
                 <div class="card" *ngFor="let s of stations$ | async">
-                  <div class="card-body">
+                  <div class="card-body py-1">
                     <div class="row no-gutters">
-                      <a class="col-2" [routerLink]="['station', s.code]">
+                      <a class="col-12 col-lg-2" [routerLink]="['station', s.code]">
                         <strong>{{s.code}}</strong>
                       </a>
-                      <!-- <div class="col-2">
-                        <strong>{{s.code}}</strong>
-                      </div> -->
-                      <div class="col-3" [ngSwitch]="s.status">
+                      <div class="col-12 col-lg-3" [ngSwitch]="s.status">
                         <i *ngSwitchCase="'waiting'" class="fa fa-circle text-warning"></i>
                         <i *ngSwitchCase="'charging'" class="fa fa-circle text-success"></i>
                         <i *ngSwitchCase="'complete'" class="fa fa-circle text-primary"></i>
                         <i *ngSwitchCase="'alert'" class="fa fa-circle text-danger"></i>
                         <i *ngSwitchDefault class="fa fa-circle text-mute"></i>
                         {{s.status | titlecase}}</div>
-                      <div class="col-3">{{s.time | date:'MM/dd hh:mm'}}</div>
-                      <div class="col-4">
+                      <div class="col-12 col-lg-3">{{s.time | date:'MM/dd hh:mm'}}</div>
+                      <div class="col-12 col-lg-4">
                         <div class="progress border border-dark">
                           <div class="progress-bar bg-success" [style.width.%]="s.value">
                             <small>{{s.value}}%</small>
@@ -108,7 +123,6 @@
               <ngx-gauge size="100" [type]="'semi'" [value]="57" [label]="'A'" [thick]="6" [append]="">
               </ngx-gauge>
             </div>
-
           </div>
           <div class="row pl-1">
             <div class="col">

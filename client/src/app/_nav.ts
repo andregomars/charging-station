@@ -43,13 +43,18 @@ export const navItems = [
     url: '/adminsetting',
     icon: 'fa fa-users'
   },
-
+  {
+    name: 'More',
+    title: true
+  },
   {
     name: 'Manual',
     url: '/manual',
+    icon: 'fa fa-book'
   },
   {
     name: 'User',
     url: '/user',
+    icon: 'fa fa-user'
   }
 ];

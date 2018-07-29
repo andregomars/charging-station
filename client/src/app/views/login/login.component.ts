@@ -11,6 +11,6 @@ export class LoginComponent {
   ) {}
 
   login() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/main']);
   }
 }
