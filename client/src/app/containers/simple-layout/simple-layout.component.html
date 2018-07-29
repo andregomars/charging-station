@@ -2,8 +2,10 @@
   [fixed]="true"
   [navbarBrandFull]="{src: 'assets/img/brand/sygnet.svg', width: 89, height: 25, alt: 'CS Logo'}"
   [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CS Logo'}"
-  [sidebarToggler]="''"
-  [asideMenuToggler]="''">
+  [sidebarToggler]="true"
+  [mobileSidebarToggler]="true" 
+  [asideMenuToggler]="false"
+  [mobileAsideMenuToggler]="false" >
 </app-header>
 <div class="app-body">
   <app-sidebar [fixed]="true" [display]="'lg'" [minimized]="true">
@@ -20,6 +22,6 @@
       <router-outlet></router-outlet>
     </div><!-- /.conainer-fluid -->
   </main>
-  <app-aside [fixed]="false" [display]="false"></app-aside>
+  <!-- <app-aside [fixed]="true" [display]="false" [offCanvas]="false"></app-aside> -->
 </div>
 <app-footer></app-footer>

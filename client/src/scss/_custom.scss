@@ -1,10 +1,15 @@
+$fa-font-path: '~font-awesome/fonts';
+
 // Here you can add other styles
 @import '~@swimlane/ngx-datatable/release/index.css';
 @import '~@swimlane/ngx-datatable/release/themes/material.css';
 @import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import '~font-awesome/scss/font-awesome.scss';
 
 $input-font-small: 12.6px;
 $input-text-width: 110px;
+$input-text-width-filter: 80px;
+$input-text-width-search: 80px;
 $input-group-height: 38px;
 
 .cs-input-group {
@@ -17,7 +22,7 @@ $input-group-height: 38px;
     @extend .input-group-prepend;
 }
 
-.cs-input-group div span {
+.cs-input-group div:first-of-type span {
     @extend .input-group-text;
     font-size: $input-font-small;
     width: $input-text-width; 
@@ -33,6 +38,10 @@ $input-group-height: 38px;
     @extend .cs-input-group;
 }
 
+.cs-input-group-search span {
+    width: $input-text-width-search !important;
+}
+
 .cs-input-group-search div:last-of-type {
     @extend .input-group-append;
 }
@@ -42,6 +51,10 @@ $input-group-height: 38px;
     @extend .cs-input-group;
 }
 
+.cs-input-group-filter span {
+    width: $input-text-width-filter !important;
+}
+
 .cs-input-group-filter div:last-of-type {
     @extend .btn-group;
     @extend .p-1;
@@ -49,10 +62,20 @@ $input-group-height: 38px;
 }
 
 .cs-input-group-filter div:last-of-type a {
-    // @extend .btn;
     @extend .nav-link;
     @extend .pt-1;
+    @extend .px-1;
     @extend .d-flex;
     @extend .flex-row;
-    font-size: $input-font-small;
+}
+
+.cs-input-group-filter div:last-of-type a i {
+    @extend .fa;
+    @extend .fa-circle;
+    @extend .px-1;
+}
+
+.cs-input-group-filter div:last-of-type a small {
+    @extend .d-none;
+    @extend .d-lg-block;
 }
