@@ -61,6 +61,10 @@ export const routes: Routes = [
         loadChildren: './views/station-list/station-list.module#StationListModule'
       },
       {
+        path: 'schedule',
+        loadChildren: './views/schedule/schedule.module#ScheduleModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },

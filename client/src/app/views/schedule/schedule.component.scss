@@ -1,0 +1,12 @@
+@import "src/scss/style.scss";
+
+$input-text-width-schedule: 110px;
+
+// station component inherits from cs-input-group
+.cs-input-group-schedule {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-schedule span {
+    width: $input-text-width-schedule;
+}

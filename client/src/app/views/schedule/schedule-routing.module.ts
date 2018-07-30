@@ -4,14 +4,14 @@ import {
   RouterModule
 } from '@angular/router';
 
-import { StationListComponent } from './station-list.component';
+import { ScheduleComponent } from './schedule.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: StationListComponent,
+    component: ScheduleComponent,
     data: {
-      title: 'Stations'
+      title: 'Schedule'
     },
   }
 ];
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class StationListRoutingModule { }
+export class ScheduleRoutingModule { }
