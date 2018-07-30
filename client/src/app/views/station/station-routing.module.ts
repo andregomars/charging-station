@@ -6,11 +6,11 @@ import { StationComponent } from './station.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'station/:id',
     component: StationComponent,
     data: {
       title: 'Station'
-    }
+    },
   }
 ];
 

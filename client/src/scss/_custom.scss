@@ -7,7 +7,7 @@ $fa-font-path: '~font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome.scss';
 
 $input-font-small: 12.6px;
-$input-text-width: 110px;
+$input-text-width-limitation: 110px;
 $input-text-width-filter: 80px;
 $input-text-width-search: 80px;
 $input-group-height: 38px;
@@ -25,12 +25,20 @@ $input-group-height: 38px;
 .cs-input-group div:first-of-type span {
     @extend .input-group-text;
     font-size: $input-font-small;
-    width: $input-text-width; 
 }
 
 .cs-input-group input[type="text"] {
     @extend .form-control;
     font-size: $input-font-small;
+}
+
+// limitation component inherits from cs-input-group
+.cs-input-group-limitation {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-limitation span {
+    width: $input-text-width-limitation !important;
 }
 
 // search component inherits from cs-input-group

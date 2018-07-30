@@ -1,0 +1,25 @@
+@import "src/scss/style.scss";
+
+$input-text-width-station: 110px;
+$button-force-width: 100px;
+
+// station component inherits from cs-input-group
+.cs-input-group-station {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-station span {
+    width: $input-text-width-station !important;
+}
+
+.cs-force-button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .shadow;
+    width: $button-force-width;
+}
+
+.cs-card-info {
+    @extend .card;
+    height: 550px;
+}

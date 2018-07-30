@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-lg-6">
       <div class="row">
-        <div class="col-3 mx-3">
+        <div class="col-12 col-md-3 mx-3">
           <div class="row bg-success">
             <div class="col">
               <div class="row">
@@ -20,83 +20,240 @@
               Charging time left
             </h6>
           </div>
-          <div class="row">
-            <div class="col-3 px-2"><button class="btn btn-dark">0</button></div>
-            <div class="col-3 px-2"><button class="btn btn-dark">9</button></div>
-            <div class="col-3 px-2"><button class="btn btn-dark">2</button></div>
-            <div class="col-3 px-2"><button class="btn btn-dark">4</button></div>
-          </div>
-          <div class="row">
-            <div class="col small text-center">Hour</div>
-            <div class="col small text-center">Minute</div>
+          <div class="row no-gutters">
+            <div class="col-6">
+              <div class="row no-gutters">
+                <div class="col pl-1">
+                  <button class="btn btn-dark btn-sm">0</button>
+                </div>
+                <div class="col pr-1">
+                  <button class="btn btn-dark btn-sm">9</button>
+                </div>
+             </div>
+              <div class="row">
+                <div class="col small text-center">Hour</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row no-gutters">
+                <div class="col pl-1">
+                  <button class="btn btn-dark btn-sm">2</button>
+                </div>
+                <div class="col pr-1">
+                  <button class="btn btn-dark btn-sm">5</button>
+                </div>
+             </div>
+              <div class="row">
+                <div class="col small text-center">Minute</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Max charger</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  Connection
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Start time</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  Start time
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Max current</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  End time
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Max kWh</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  SOC
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Daily Max kWh</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  Current
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Daily Max kWh</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  Charged kWh
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-6 text-white bg-info pb-1">Daily Max kWh</h5>
-            <h5 class="col-3"></h5>
+            <div class="cs-input-group-station">
+              <div>
+                <span>
+                  Error code
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
           </div>
-          <div class="row my-1">
-              <div class="col-3">
-                <button class="btn btn-primary shadow">Force Start</button>
-              </div>
-              <div class="col-9 small mt-2">
-                Force start will let lowest priority charge pause charging
-              </div>
+          <div class="row mt-5">
+            <div class="col-12 col-md-3">
+              <button class="cs-force-button">
+                Force Start
+              </button>
+            </div>
+            <div class="col-12 col-md-9">
+              <small>
+                Force start will let lowest priority charger pause charging
+              </small>
+            </div>
           </div>
-          <div class="row my-1">
-              <div class="col-3">
-                <button class="btn btn-primary shadow">Force Pause</button>
-              </div>
-              <div class="col-9 small mt-2">
-                Force start will let lowest priority charge pause charging
-              </div>
+          <div class="row mt-3">
+            <div class="col-12 col-md-3">
+              <button class="cs-force-button">
+                Force Pause
+              </button>
+            </div>
+            <div class="col-12 col-md-9">
+              <small>
+                Force pause will pause charger, but it will automatically go back to charging if condition is available
+              </small>
+            </div>
           </div>
-          <div class="row my-1">
-              <div class="col-3">
-                <button class="btn btn-primary">Force Stop</button>
-              </div>
-              <div class="col-9 small mt-2">
-                Force start will let lowest priority charge pause charging
-              </div>
+          <div class="row my-3">
+            <div class="col-12 col-md-3">
+              <button class="cs-force-button">
+                Force Stop
+              </button>
+            </div>
+            <div class="col-12 col-md-9">
+              <small>
+                Force stop will stop charger, user needs to press start Force Start to switch on charger.
+              </small>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 col-lg-6">
       <div class="row">
-        <div class="col-12 div col-md-6">
-          <div class="card">
-            <div class="card-body"></div>
+        <div class="col-12 div col-lg-6">
+          <div class="cs-card-info">
+            <div class="card-body">
+              <div class="card-title">Vehicle Information</div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Vehicle#
+                    </span>
+                  </div>
+                  <input type="text" value="" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      VIN#
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input type="text" class="form-control" value="">
+              </div>
+              <div class="row mt-5">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Other Info
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-12 div col-md-6">
-          <div class="card">
-            <div class="card-body"></div>
+        <div class="col-12 div col-lg-6">
+          <div class="cs-card-info">
+            <div class="card-body">
+              <div class="card-title">Charger Station Information</div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Charger#
+                    </span>
+                  </div>
+                  <input type="text" value="A01" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      Priority#
+                    </span>
+                  </div>
+                  <input type="text" value="A01" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="cs-input-group">
+                  <div>
+                    <span>
+                      VIN#
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input type="text" class="form-control" value="">
+              </div>
+              <div class="row mt-4">
+                <button class="btn btn-primary shadow w-100">Update Program</button>
+              </div>
+              <div class="row mt-4">
+                <div class="cs-input-group">
+                  <div class="w-100">
+                    <span class="w-100">
+                      Update history
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </div>
