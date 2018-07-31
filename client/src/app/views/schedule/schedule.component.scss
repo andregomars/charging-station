@@ -10,3 +10,7 @@ $input-text-width-schedule: 110px;
 .cs-input-group-schedule span {
     width: $input-text-width-schedule;
 }
+
+table {
+    overflow-x: auto;
+}

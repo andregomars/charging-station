@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient  } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-station-list',
@@ -13,7 +14,7 @@ export class StationListComponent implements OnInit {
   stations$: Observable<any>;
 
   constructor(
-    private http: HttpClient
+    private dataService: DataService
   ) {
   }
 
@@ -22,6 +23,6 @@ export class StationListComponent implements OnInit {
   }
 
   loadData() {
-    this.stations$ = this.http.get<any>(`${ this.rootUrl }/stations.json`);
+    this.stations$ = this.dataService.getStations();
   }
 }
