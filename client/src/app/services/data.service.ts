@@ -10,7 +10,8 @@ import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 export class DataService {
 
   private rootUrl = 'assets/data';
-  private delayEmulatorTimer = 300;
+  // private delayEmulatorTimer = 3000;
+  private delayEmulatorTimer = 0;
 
   constructor(
     private http: HttpClient
@@ -26,6 +27,13 @@ export class DataService {
   getSchedules(): Observable<any> {
       return this.http
         .get<any>(`${ this.rootUrl }/schedules.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
+
+  getMalfunctions(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/malfunctions.json`).pipe(
           delay(this.delayEmulatorTimer)
         );
   }

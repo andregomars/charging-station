@@ -1,0 +1,105 @@
+<div class="animated fadeIn">
+  <div class="card px-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-xl-6 mb-2">
+          <div class="row">
+            <div class="col-12 div col-lg-5">
+              <div class="cs-input-group-search">
+                <div>
+                  <span>Station#</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 div col-lg-5">
+              <div class="cs-input-group-malfunction">
+                <div>
+                  <span>Date Range</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-calendar"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 div col-lg-2">
+              <button class="btn btn-primary small">Export</button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <table class="table table-responsive-lg table-striped table-hover table-outline mb-0">
+              <thead class="thead-light">
+                <tr>
+                  <th>Charge station#</th>
+                  <th>Error code</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let m of malfunctions$ | async">
+                  <td>
+                    <div class="small text-muted">{{m.station_id}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{m.error_code}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{m.update_time}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="row">
+            <div class="col-12 col-lg-6 text-left">
+              <h6 class="">Last two week's alert times</h6>
+            </div>
+            <div class="col-12 col-lg-6 text-right">
+              <div class="float-right cs-input-group-malfunction">
+                <div>
+                  <span>Date Range</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-calendar"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
+              [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12 col-xl-6">
+              <div class="chart-wrapper">
+                <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                  (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+              </div>
+              <div class="text-center small">Last two weeks error codes %</div>
+            </div>
+            <div class="col-12 col-xl-6">
+              <div class="chart-wrapper">
+                <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                  (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+              </div>
+              <div class="text-center small">Last two weeks error stations %</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

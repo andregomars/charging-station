@@ -1,0 +1,15 @@
+@import "src/scss/style.scss";
+
+$input-search-width-malfunction: 100px;
+
+.cs-input-group-malfunction {
+    @extend .cs-input-group-search;
+}
+
+.cs-input-group-malfunction span {
+    width: $input-search-width-malfunction !important;
+}
+
+table {
+    overflow-x: auto;
+}

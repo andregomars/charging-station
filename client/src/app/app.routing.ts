@@ -65,6 +65,10 @@ export const routes: Routes = [
         loadChildren: './views/schedule/schedule.module#ScheduleModule'
       },
       {
+        path: 'malfunctions',
+        loadChildren: './views/malfunction/malfunction.module#MalfunctionModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },
