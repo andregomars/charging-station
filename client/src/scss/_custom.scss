@@ -10,6 +10,7 @@ $input-font-small: 12.6px;
 $input-text-width-limitation: 110px;
 $input-text-width-filter: 80px;
 $input-text-width-search: 80px;
+$input-text-width-switch: 110px;
 $input-group-height: 38px;
 
 .cs-input-group {
@@ -86,4 +87,19 @@ $input-group-height: 38px;
 .cs-input-group-filter div:last-of-type a small {
     @extend .d-none;
     @extend .d-lg-block;
+}
+
+// switch button
+.cs-input-group-switch {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-switch span {
+    width: $input-text-width-switch !important;
+}
+
+.cs-input-group-switch div:last-of-type {
+    @extend .text-center; 
+    @extend .p-1; 
+    width: 80px;
 }

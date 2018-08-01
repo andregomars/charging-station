@@ -47,6 +47,7 @@
     "ngx-bootstrap": "^3.0.1",
     "ngx-gauge": "^1.0.0-beta.4",
     "ngx-perfect-scrollbar": "^6.2.0",
+    "ngx-ui-switch": "^6.0.3",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "simple-line-icons": "^2.4.1",

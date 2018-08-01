@@ -1,0 +1,18 @@
+@import "src/scss/style.scss";
+
+$input-text-width-setting: 110px;
+
+.cs-input-group-setting {
+    @extend .cs-input-group;
+}
+
+.cs-input-group-setting span {
+    width: $input-text-width-setting;
+}
+
+.cs-input-group-setting input {
+    @extend .form-control;
+}
+
+
+

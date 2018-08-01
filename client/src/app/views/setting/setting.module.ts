@@ -2,27 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { UiSwitchModule } from 'ngx-ui-switch';
 
 import { DataService } from '../../services/data.service';
-import { ScheduleComponent } from './schedule.component';
-import { ScheduleRoutingModule } from './schedule-routing.module';
-import { UiSwitchModule } from 'ngx-ui-switch';
+import { SettingRoutingModule } from './setting-routing.module';
+import { SettingComponent } from './setting.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ScheduleRoutingModule,
+    SettingRoutingModule,
+    ChartsModule,
     UiSwitchModule,
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ ScheduleComponent ],
+  declarations: [ SettingComponent ],
   providers: [
     DataService
   ]
 })
-export class ScheduleModule { }
+export class SettingModule { }
