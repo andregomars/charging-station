@@ -37,4 +37,11 @@ export class DataService {
           delay(this.delayEmulatorTimer)
         );
   }
+
+  getStatistics(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/statistics.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
 }

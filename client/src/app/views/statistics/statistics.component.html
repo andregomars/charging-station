@@ -1,0 +1,109 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-12 col-xl-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="cs-input-group">
+                <div>
+                  <span>Month</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-calendar"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 text-right">
+              <button class="btn btn-primary small">Export</button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col">
+              <table class="table table-responsive-lg table-striped table-hover table-outline mb-0">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Charge station#</th>
+                    <th>Charged kWh</th>
+                    <th>Charged hours</th>
+                    <th>Charged times</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let s of statistics$ | async">
+                    <td>
+                      <div class="small text-muted">{{s.station_id}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{s.charged_kwh}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{s.charged_hours}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{s.charged_times}}</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-4">
+      <div class="row">
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">13258.8</div>
+              <div>Total charged kWh</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">12500.1</div>
+              <div>This month charged kWh</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">500</div>
+              <div>Total charged hours</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">13258</div>
+              <div>This month charged hours</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">851</div>
+              <div>Total charged times</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card text-white bg-primary h-75">
+            <div class="card-body">
+              <div class="text-value">152</div>
+              <div>This month charged times</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
