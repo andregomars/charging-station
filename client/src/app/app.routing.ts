@@ -73,6 +73,10 @@ export const routes: Routes = [
         loadChildren: './views/statistics/statistics.module#StatisticsModule'
       },
       {
+        path: 'notifications',
+        loadChildren: './views/notifications/notifications.module#NotificationsModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },

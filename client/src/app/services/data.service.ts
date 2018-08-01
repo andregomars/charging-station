@@ -44,4 +44,11 @@ export class DataService {
           delay(this.delayEmulatorTimer)
         );
   }
+
+  getNotifications(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/notifications.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
 }
