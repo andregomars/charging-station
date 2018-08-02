@@ -94,7 +94,7 @@ $input-group-height: 38px;
     @extend .cs-input-group;
 }
 
-.cs-input-group-switch span {
+.cs-input-group-switch div:first-of-type span {
     width: $input-text-width-switch !important;
 }
 
