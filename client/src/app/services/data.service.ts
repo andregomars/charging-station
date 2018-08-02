@@ -51,4 +51,11 @@ export class DataService {
           delay(this.delayEmulatorTimer)
         );
   }
+
+  getCommands(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/commands.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
 }

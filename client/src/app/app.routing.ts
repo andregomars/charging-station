@@ -13,7 +13,7 @@ import { RegisterComponent } from './views/register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'main',
     pathMatch: 'full',
   },
   {
@@ -79,6 +79,10 @@ export const routes: Routes = [
       {
         path: 'setting',
         loadChildren: './views/setting/setting.module#SettingModule'
+      },
+      {
+        path: 'adminsetting',
+        loadChildren: './views/admin-setting/admin-setting.module#AdminSettingModule'
       },
       {
         path: 'base',

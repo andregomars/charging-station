@@ -1,0 +1,23 @@
+[
+    {
+        "command_id": 1,
+        "command_name": "ON",
+        "start_bit": 33,
+        "length": 2,
+        "data": "01"
+    },
+    {
+        "command_id": 2,
+        "command_name": "OFF",
+        "start_bit": 33,
+        "length": 2,
+        "data": "00"
+    },
+    {
+        "command_id": 3,
+        "command_name": "PAUSE",
+        "start_bit": 33,
+        "length": 2,
+        "data": "02"
+    }
+]
