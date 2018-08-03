@@ -10,6 +10,9 @@ import { UiSwitchModule } from 'ngx-ui-switch';
 import { DataService } from '../../services/data.service';
 import { SettingRoutingModule } from './setting-routing.module';
 import { SettingComponent } from './setting.component';
+import { MainSettingComponent } from './main-setting.component';
+import { StationSettingComponent } from './station-setting.component';
+import { VehicleSettingComponent } from './vehicle-setting.component';
 
 @NgModule({
   imports: [
@@ -22,7 +25,12 @@ import { SettingComponent } from './setting.component';
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ SettingComponent ],
+  declarations: [
+    SettingComponent,
+    MainSettingComponent,
+    StationSettingComponent,
+    VehicleSettingComponent
+  ],
   providers: [
     DataService
   ]

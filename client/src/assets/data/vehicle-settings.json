@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "vehicle_id": 12312,
+        "vehicle_vin": 1234567890123,
+        "spec": "vehicle power and voltage"
+    },
+    {
+        "id": 2,
+        "vehicle_id": 12312,
+        "vehicle_vin": 1234567890123,
+        "spec": "vehicle power and voltage"
+    },
+    {
+        "id": 3,
+        "vehicle_id": 12312,
+        "vehicle_vin": 1234567890123,
+        "spec": "vehicle power and voltage"
+    },
+    {
+        "id": 4,
+        "vehicle_id": 12312,
+        "vehicle_vin": 1234567890123,
+        "spec": "vehicle power and voltage"
+    },
+    {
+        "id": 5,
+        "vehicle_id": 12312,
+        "vehicle_vin": 1234567890123,
+        "spec": "vehicle power and voltage"
+    }
+]

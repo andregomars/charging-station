@@ -58,7 +58,7 @@ export const routes: Routes = [
       },
       {
         path: 'stations',
-        loadChildren: './views/station-list/station-list.module#StationListModule'
+        loadChildren: './views/station/station.module#StationModule'
       },
       {
         path: 'schedule',

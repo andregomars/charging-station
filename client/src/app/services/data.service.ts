@@ -58,4 +58,18 @@ export class DataService {
           delay(this.delayEmulatorTimer)
         );
   }
+
+  getStationSettings(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/station-settings.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
+
+  getVehicleSettings(): Observable<any> {
+      return this.http
+        .get<any>(`${ this.rootUrl }/vehicle-settings.json`).pipe(
+          delay(this.delayEmulatorTimer)
+        );
+  }
 }

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "station_id": 5001,
+        "station_vin": "012345678901",
+        "identification_id": "1dzdf41",
+        "priority": 99,
+        "spec": "power and voltage"
+    },
+    {
+        "id": 2,
+        "station_id": 5001,
+        "station_vin": "012345678901",
+        "identification_id": "1dzdf41",
+        "priority": 99,
+        "spec": "power and voltage"
+    },
+    {
+        "id": 3,
+        "station_id": 5001,
+        "station_vin": "012345678901",
+        "identification_id": "1dzdf41",
+        "priority": 99,
+        "spec": "power and voltage"
+    },
+    {
+        "id": 4,
+        "station_id": 5001,
+        "station_vin": "012345678901",
+        "identification_id": "1dzdf41",
+        "priority": 99,
+        "spec": "power and voltage"
+    },
+    {
+        "id": 5,
+        "station_id": 5001,
+        "station_vin": "012345678901",
+        "identification_id": "1dzdf41",
+        "priority": 99,
+        "spec": "power and voltage"
+    }
+]

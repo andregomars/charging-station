@@ -1,0 +1,199 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          Default Schedule
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Start time
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  End time
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  All day
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small" checked></ui-switch>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          Default limitations
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max chargers
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max current
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max kWh
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Daily Max kWh
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          Notification
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  Start charging
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small" checked></ui-switch>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  Finish charging
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small"></ui-switch>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  Alert
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small"></ui-switch>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  Monthly report
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small"></ui-switch>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="cs-input-group">
+              <div>
+                <span>
+                  Email list
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          Report
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="cs-input-group-switch">
+              <div>
+                <span>
+                  Monthly report
+                </span>
+              </div>
+              <div>
+                <ui-switch size="small" checked></ui-switch>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="cs-input-group">
+              <div>
+                <span>
+                  Email list
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
