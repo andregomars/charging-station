@@ -117,6 +117,10 @@ export const routes: Routes = [
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
       }
     ]
+  },
+  {
+    path: '**',
+    component: P404Component
   }
 ];
 
