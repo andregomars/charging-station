@@ -2,47 +2,48 @@
   <div class="row">
     <div class="col-12 col-lg-6">
       <div class="row">
-        <div class="col-12 col-sm-3 col-md-2 col-lg-3">
+        <div class="col-12 col-sm-4 col-md-3 col-lg-4">
           <div class="row">
             <div class="col-12">
-              <div class="row text-center">
-                <div class="col-5 offset-4 col-sm-12 offset-sm-0 cs-charging-status-bg">
+              <div class="row">
+                <div class="col-7 offset-3 col-sm-12 offset-sm-0 
+                d-flex flex-column justify-content-around 
+                cs-charging-status-bg">
                   <div class="row">
-                    <h3 class="col text-white text-center my-5">A01</h3>
+                    <h3 class="col text-white text-center">A01</h3>
+                  </div>
+                  <div class="row">
+                    <h4 class="col text-white text-center">Charging</h4>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-12">
-              <div class="row my-2">
-                <h6 class="col">
+              <div class="row mt-2">
+                <h6 class="col text-center">
                   Charging time left
                 </h6>
               </div>
-              <div class="row no-gutters">
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col btn-group ">
-                      <button class="btn btn-dark btn-sm">0</button>
-                      <button class="btn btn-dark btn-sm">9</button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col small ">Hour</div>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="row no-gutters">
-                    <div class="col btn-group">
-                      <button class="btn btn-dark btn-sm">2</button>
-                      <button class="btn btn-dark btn-sm">5</button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col small ">Minute</div>
-                  </div>
+              <div class="row">
+                <div class="col btn-group justify-content-center">
+                  <button class="btn btn-dark btn-sm border border-secondary" disabled>0</button>
+                  <button class="btn btn-dark btn-sm border border-secondary" disabled>9</button>
+                  <button class="btn btn-dark btn-sm border border-secondary font-weight-bold" disabled>:</button>
+                  <button class="btn btn-dark btn-sm border border-secondary" disabled>2</button>
+                  <button class="btn btn-dark btn-sm border border-secondary" disabled>5</button>
                 </div>
               </div>
+              <div class="row mt-4 align-self-end">
+                <h6 class="col text-center">
+                  Last updated time
+                </h6>
+              </div>
+              <div class="row">
+                <p class="col text-center">
+                  {{ lastUpdatedTime | date:'MM/dd mm:ss'}}
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
