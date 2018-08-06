@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { Observable } from 'rxjs';
+import { map, find, take, tap, switchMap, concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-station',
@@ -7,10 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StationComponent implements OnInit {
   lastUpdatedTime = new Date();
+  sid$: Observable<string>;
+  station$: Observable<any>;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private dataService: DataService
+  ) { }
 
   ngOnInit() {
+    this.loadStation();
   }
 
+  loadStation() {
+    const stations$ = this.dataService.getStations();
+    this.sid$ = this.route.paramMap.pipe(
+        map((params: ParamMap) => params.get('id'))
+    );
+
+    // this.station$ = this.sid$.pipe(
+    //   concatMap(id => {
+    //     take(1),
+    //   tap(x => console.log(x));
+    //     return stations$.pipe(
+    //       find(s => s.code.toUpperCase() === id.toUpperCase())
+    //     );
+    //   }),
+    //   tap(x => console.log(x))
+    // );
+  }
 }
