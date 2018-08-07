@@ -30,15 +30,14 @@ export class StationComponent implements OnInit {
         map((params: ParamMap) => params.get('id'))
     );
 
-    // this.station$ = this.sid$.pipe(
-    //   concatMap(id => {
-    //     take(1),
-    //   tap(x => console.log(x));
-    //     return stations$.pipe(
-    //       find(s => s.code.toUpperCase() === id.toUpperCase())
-    //     );
-    //   }),
-    //   tap(x => console.log(x))
-    // );
+    this.station$ = this.sid$.pipe(
+      concatMap(id => {
+        return stations$.pipe(
+          map(stations => {
+            return stations.find(s => s.code.toUpperCase() === id.toUpperCase());
+          })
+        );
+      }),
+    );
   }
 }

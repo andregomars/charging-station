@@ -11,12 +11,13 @@
                 cs-charging-status-bg">
                   <div class="row">
                     <h3 class="col text-white text-center">
-                      <!-- {{ (station$ | async)?.code }} -->
-                      {{ sid$ | async }}
+                      {{ (station$ | async)?.code }}
                     </h3>
                   </div>
                   <div class="row">
-                    <h4 class="col text-white text-center">Charging</h4>
+                    <h4 class="col text-white text-center">
+                      {{ (station$ | async)?.status | titlecase }}
+                    </h4>
                   </div>
                 </div>
               </div>
