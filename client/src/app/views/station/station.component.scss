@@ -25,9 +25,32 @@ $button-force-width: 100px;
 }
 
 .cs-charging-status-bg {
-    height: 300px;
+    height: 280px;
     width: 200px;
-    background:transparent url('assets/img/station/charging.gif') no-repeat center center /cover;
+    // background: transparent url('assets/img/station/charging.gif') no-repeat center center /cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// status background image
+.cs-bg-offline {
+    background-image: url('assets/img/station/offline.png');
+}
+
+.cs-bg-alert {
+    background-image: url('assets/img/station/alert.png');
+}
+
+.cs-bg-waiting {
+    background-image: url('assets/img/station/waiting.png');
+}
+
+.cs-bg-complete {
+    background-image: url('assets/img/station/complete.png');
+}
+
+.cs-bg-charging {
+    background-image: url('assets/img/station/charging.gif');
 }
 
 .cs-charging-left-time {

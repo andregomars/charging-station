@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Observable } from 'rxjs';
-import { map, find, take, tap, switchMap, concatMap } from 'rxjs/operators';
+import { map, tap, concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-station',
@@ -24,7 +24,7 @@ export class StationComponent implements OnInit {
     this.loadStation();
   }
 
-  loadStation() {
+  private loadStation() {
     const stations$ = this.dataService.getStations();
     this.sid$ = this.route.paramMap.pipe(
         map((params: ParamMap) => params.get('id'))
@@ -34,10 +34,23 @@ export class StationComponent implements OnInit {
       concatMap(id => {
         return stations$.pipe(
           map(stations => {
-            return stations.find(s => s.code.toUpperCase() === id.toUpperCase());
+            const station = stations.find(s =>
+              s.code.toUpperCase() === id.toUpperCase()
+            );
+            return this.attachBackgroundImageCss(station);
           })
         );
       }),
+      tap(x => console.log(x))
     );
+  }
+
+  private attachBackgroundImageCss(station: any): any {
+    if (!station || !station.status) {
+      return station;
+    }
+
+    const imgcss = { imageClass: `cs-bg-${station.status}`};
+    return {...station, ...imgcss};
   }
 }
