@@ -10,19 +10,19 @@
                   <span>Filter</span>
                 </div>
                 <div>
-                  <a href="javascript:void(0)">
+                  <a href="" [routerLink]="" (click)="loadData()">
                     <small>All</small>
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="" [routerLink]="" (click)="filterStatus('waiting')">
                     <i class="text-warning"></i><small>Waiting</small>
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="" [routerLink]="" (click)="filterStatus('charging')">
                     <i class="text-success"></i><small>Charging</small>
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="" [routerLink]="" (click)="filterStatus('complete')">
                     <i class="text-primary"></i><small>Complete</small>
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="" [routerLink]="" (click)="filterStatus('alert')">
                     <i class="text-danger"></i><small>Alert</small>
                   </a>
                 </div>
@@ -33,9 +33,9 @@
                 <div>
                   <span>Station#</span>
                 </div>
-                <input type="text" size="5" class="form-contrl" />
+                <input type="text" [(ngModel)]="stationCode" size="5" class="form-contrl" />
                 <div>
-                  <button class="btn btn-primary pt-0">
+                  <button class="btn btn-primary pt-0" (click)="filterStation(stationCode)">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>

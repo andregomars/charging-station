@@ -40,8 +40,7 @@ export class StationComponent implements OnInit {
             return this.attachBackgroundImageCss(station);
           })
         );
-      }),
-      tap(x => console.log(x))
+      })
     );
   }
 
