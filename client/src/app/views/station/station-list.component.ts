@@ -11,7 +11,7 @@ import { share, map, tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StationListComponent implements OnInit {
-  rootUrl = 'assets/data';
+  stationCode: string;
   rows = [];
   stations$: Observable<any>;
 
