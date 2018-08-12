@@ -9,8 +9,10 @@
   "copyright": "charging station",
   "license": "MIT",
   "scripts": {
+    "android": "tns run android --bundle",
+    "ios": "tns run ios --bundle",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "deploy": "ng build --prod",
     "postdeploy": "cd .. && firebase deploy && cd client",
@@ -34,6 +36,7 @@
     "@coreui/coreui": "^2.0.4",
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "^0.3.0",
+    "@nativescript/schematics": "^0.2.5",
     "bootstrap": "^4.1.2",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.7",
@@ -41,14 +44,18 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.22.2",
     "mutationobserver-shim": "^0.3.2",
+    "nativescript-angular": "~6.1.0",
+    "nativescript-theme-core": "~1.0.4",
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.0.1",
     "ngx-gauge": "^1.0.0-beta.4",
     "ngx-perfect-scrollbar": "^6.2.0",
     "ngx-ui-switch": "^6.0.3",
+    "reflect-metadata": "~0.1.8",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "simple-line-icons": "^2.4.1",
+    "tns-core-modules": "~4.2.0",
     "ts-helpers": "^1.1.2",
     "zone.js": "~0.8.26"
   },
@@ -68,13 +75,21 @@
     "karma-coverage-istanbul-reporter": "^2.0.1",
     "karma-jasmine": "^1.1.2",
     "karma-jasmine-html-reporter": "^1.2.0",
+    "nativescript-dev-webpack": "^0.15.0",
     "protractor": "^5.3.2",
     "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
-    "typescript": "2.7.2"
+    "typescript": "2.7.2",
+    "webpack-cli": "^3.1.0"
   },
   "engines": {
     "node": ">= 8.9.4",
     "npm": ">= 5.6.0"
+  },
+  "nativescript": {
+    "id": "org.nativescript.ngsample",
+    "tns-android": {
+      "version": "4.2.0"
+    }
   }
 }
