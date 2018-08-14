@@ -43,7 +43,6 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -67,7 +66,6 @@ import { HomeComponent } from './home/home.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
   ],
   providers: [{
     provide: LocationStrategy,
