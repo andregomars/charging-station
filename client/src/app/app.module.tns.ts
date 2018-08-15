@@ -3,7 +3,8 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 
 import { AppRoutingModule } from './app.routing.tns';
 import { AppComponent } from './app.component';
-import { MainComponent } from './views/main/main.component';
+import { MainComponent } from './views/main/main.component.tns';
+import { StationListComponent } from './views/station/station-list.component.tns';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -15,7 +16,8 @@ import { MainComponent } from './views/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    StationListComponent
   ],
   imports: [
     NativeScriptModule,

@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
   public mainChartOptions: any = {
     tooltips: {
       enabled: false,
-      // custom: CustomTooltips,
+      custom: CustomTooltips,
       intersect: true,
       mode: 'index',
       position: 'nearest',
@@ -86,18 +86,18 @@ export class MainComponent implements OnInit {
   };
   public mainChartColours: Array<any> = [
     { // brandInfo
-      // backgroundColor: hexToRgba(getStyle('--info'), 10),
-      // borderColor: getStyle('--info'),
+      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      borderColor: getStyle('--info'),
       pointHoverBackgroundColor: '#fff'
     },
     { // brandSuccess
       backgroundColor: 'transparent',
-      // borderColor: getStyle('--success'),
+      borderColor: getStyle('--success'),
       pointHoverBackgroundColor: '#fff'
     },
     { // brandDanger
       backgroundColor: 'transparent',
-      // borderColor: getStyle('--danger'),
+      borderColor: getStyle('--danger'),
       pointHoverBackgroundColor: '#fff',
       borderWidth: 1,
       borderDash: [8, 5]
