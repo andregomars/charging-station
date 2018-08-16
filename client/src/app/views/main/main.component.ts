@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
     }
   ];
   /* tslint:disable:max-line-length */
-  public mainChartLabels: Array<any> = Array.from(new Array(24), (val, index) => (index).toString().padStart(2, '0'));
+  public mainChartLabels: Array<any> = Array.from(new Array(25), (val, index) => (index).toString().padStart(2, '0'));
   /* tslint:enable:max-line-length */
   public mainChartOptions: any = {
     tooltips: {
