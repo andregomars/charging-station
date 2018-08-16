@@ -9,11 +9,13 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { ViewGuard } from './guards/view.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -54,35 +56,43 @@ export const routes: Routes = [
     children: [
       {
         path: 'main',
-        loadChildren: './views/main/main.module#MainModule'
+        loadChildren: './views/main/main.module#MainModule',
+        canActivate: [ViewGuard]
       },
       {
         path: 'stations',
-        loadChildren: './views/station/station.module#StationModule'
+        loadChildren: './views/station/station.module#StationModule',
+        canActivate: [ViewGuard]
       },
       {
         path: 'schedule',
-        loadChildren: './views/schedule/schedule.module#ScheduleModule'
+        loadChildren: './views/schedule/schedule.module#ScheduleModule',
+        canActivate: [ViewGuard]
       },
       {
         path: 'malfunctions',
-        loadChildren: './views/malfunction/malfunction.module#MalfunctionModule'
+        loadChildren: './views/malfunction/malfunction.module#MalfunctionModule',
+        canActivate: [ViewGuard]
       },
       {
         path: 'statistics',
-        loadChildren: './views/statistics/statistics.module#StatisticsModule'
+        loadChildren: './views/statistics/statistics.module#StatisticsModule',
+        canActivate: [ViewGuard]
       },
       {
         path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule'
+        loadChildren: './views/notifications/notifications.module#NotificationsModule',
+        canActivate: [AdminGuard]
       },
       {
         path: 'setting',
-        loadChildren: './views/setting/setting.module#SettingModule'
+        loadChildren: './views/setting/setting.module#SettingModule',
+        canActivate: [AdminGuard]
       },
       {
         path: 'adminsetting',
-        loadChildren: './views/admin-setting/admin-setting.module#AdminSettingModule'
+        loadChildren: './views/admin-setting/admin-setting.module#AdminSettingModule',
+        canActivate: [AdminGuard]
       }
     ]
   },

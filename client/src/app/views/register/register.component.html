@@ -11,27 +11,27 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-user"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" [(ngModel)]="username" class="form-control" placeholder="Username">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" [(ngModel)]="email" class="form-control" placeholder="Email">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
                 </div>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password">
               </div>
               <div class="input-group mb-4">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
                 </div>
-                <input type="password" class="form-control" placeholder="Repeat password">
+                <input type="password" [(ngModel)]="passwordrepeat" class="form-control" placeholder="Repeat password">
               </div>
-              <button type="button" class="btn btn-block btn-success">Create Account</button>
+              <button type="button" class="btn btn-block btn-success" (click)="signUp()">Create Account</button>
               <div class="px-2">
                 <small>
                   By creating an account, you are agreeing to the terms & conditions and privacy policy, including receipt of email notifications.

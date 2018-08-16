@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -34,6 +35,12 @@ import {
   AppSidebarModule,
 } from '@coreui/angular';
 
+// Import customed module
+import {
+  CoreModule
+} from './services/core.module';
+
+
 // Import routing module
 import { AppRoutingModule } from './app.routing';
 
@@ -57,6 +64,8 @@ import { environment } from '../environments/environment';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    FormsModule,
+    CoreModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
