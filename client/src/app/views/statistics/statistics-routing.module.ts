@@ -5,11 +5,13 @@ import {
 } from '@angular/router';
 
 import { StatisticsComponent } from './statistics.component';
+import { ViewGuard } from '../../guards/view.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: StatisticsComponent,
+    canActivate: [ViewGuard],
     data: {
       title: 'Statistics'
     },

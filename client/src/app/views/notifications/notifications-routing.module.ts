@@ -5,11 +5,13 @@ import {
 } from '@angular/router';
 
 import { NotificationsComponent } from './notifications.component';
+import { AdminGuard } from '../../guards/admin.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: NotificationsComponent,
+    canActivate: [AdminGuard],
     data: {
       title: 'Notifications'
     },

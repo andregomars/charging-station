@@ -8,11 +8,13 @@ import { SettingComponent } from './setting.component';
 import { MainSettingComponent } from './main-setting.component';
 import { StationSettingComponent } from './station-setting.component';
 import { VehicleSettingComponent } from './vehicle-setting.component';
+import { AdminGuard } from '../../guards/admin.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: SettingComponent,
+    canActivate: [AdminGuard],
     data: {
       title: 'Setting'
     },

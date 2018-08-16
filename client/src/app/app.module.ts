@@ -35,11 +35,14 @@ import {
   AppSidebarModule,
 } from '@coreui/angular';
 
-// Import customed module
+// Import customed components and modules
 import {
   CoreModule
 } from './services/core.module';
 
+import {
+  AccountBarComponent
+} from './components/account-bar/account-bar.component';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -75,6 +78,7 @@ import { environment } from '../environments/environment';
     P500Component,
     LoginComponent,
     RegisterComponent,
+    AccountBarComponent,
   ],
   providers: [{
     provide: LocationStrategy,

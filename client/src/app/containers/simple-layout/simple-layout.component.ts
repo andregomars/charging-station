@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { navItems } from './../../_nav';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +11,6 @@ export class SimpleLayoutComponent {
   private changes: MutationObserver;
   public element: HTMLElement = document.body;
   constructor(
-    private authService: AuthService
   ) {
 
     this.changes = new MutationObserver((mutations) => {
@@ -22,9 +20,5 @@ export class SimpleLayoutComponent {
     this.changes.observe(<Element>this.element, {
       attributes: true
     });
-  }
-
-  signOut() {
-    this.authService.signOut();
   }
 }

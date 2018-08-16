@@ -50,7 +50,7 @@ export class AuthService {
 
     const data: User = {
       uid: userCredential.user.uid,
-      displayName: username ,
+      name: username,
       email: userCredential.user.email || null,
       roles: { viewer: true }
     };

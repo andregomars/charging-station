@@ -3,11 +3,13 @@ import { Routes,
      RouterModule } from '@angular/router';
 
 import { MainComponent } from './main.component';
+import { ViewGuard } from '../../guards/view.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    canActivate: [ViewGuard],
     data: {
       title: 'Main'
     }

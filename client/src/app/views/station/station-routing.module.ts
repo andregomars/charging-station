@@ -7,11 +7,13 @@ import {
 import { StationOutletComponent } from './station-outlet.component';
 import { StationListComponent } from './station-list.component';
 import { StationComponent } from './station.component';
+import { ViewGuard } from '../../guards/view.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: StationOutletComponent,
+    canActivate: [ViewGuard],
     data: {
       title: 'Stations'
     },
