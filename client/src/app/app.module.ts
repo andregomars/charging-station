@@ -65,7 +65,7 @@ import { environment } from '../environments/environment';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   providers: [{
     provide: LocationStrategy,

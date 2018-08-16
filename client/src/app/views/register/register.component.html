@@ -32,14 +32,19 @@
                 <input type="password" class="form-control" placeholder="Repeat password">
               </div>
               <button type="button" class="btn btn-block btn-success">Create Account</button>
+              <div class="px-2">
+                <small>
+                  By creating an account, you are agreeing to the terms & conditions and privacy policy, including receipt of email notifications.
+                </small>
+              </div>
             </div>
             <div class="card-footer p-4">
-              <div class="row">
-                <div class="col-6">
+              <div class="row mt-2 justify-content-center">
+                <!-- <div class="col-6">
                   <button class="btn btn-block btn-facebook" type="button"><span>facebook</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn btn-block btn-twitter" type="button"><span>twitter</span></button>
+                </div> -->
+                <div class="col-8">
+                  <button class="btn btn-block btn-twitter" type="button" [routerLink]="['/login']"><span>Back to Login</span></button>
                 </div>
               </div>
             </div>
