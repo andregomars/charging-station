@@ -20,7 +20,7 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       return this.auth.user.pipe(
         take(1),
-        map(user => !!(user && user.roles.admin)),
+        map(user => !!(user && this.auth.canEdit(user))),
         tap(isAdmin => {
           if (!isAdmin) {
             console.error('only admin is allowed!');

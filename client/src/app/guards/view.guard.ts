@@ -26,8 +26,8 @@ export class ViewGuard implements CanActivate {
         tap(isViewer => {
           if (!isViewer) {
             console.error('need view permission!');
-            // this.router.navigate(['/login']);
-            this.location.back();
+            this.router.navigate(['/login']);
+            // this.location.back();
           }
         })
       );
