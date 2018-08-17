@@ -53,8 +53,8 @@ export const navItems = [
     icon: 'fa fa-book'
   },
   {
-    name: 'User',
-    url: '/user',
+    name: 'Users',
+    url: '/users',
     icon: 'fa fa-user'
   }
 ];

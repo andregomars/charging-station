@@ -34,6 +34,11 @@ export class AuthService {
     );
   }
 
+  getAllUsers(): Observable<User[]> {
+    return this.afs.collection<User>(`users`).valueChanges();
+  }
+
+
   signUp(email: string, username: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
