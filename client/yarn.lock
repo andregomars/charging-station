@@ -655,6 +655,12 @@ angularfire2@^5.0.0-rc.11:
   version "5.0.0-rc.11"
   resolved "https://registry.yarnpkg.com/angularfire2/-/angularfire2-5.0.0-rc.11.tgz#697c43bf8e74fe5b27afa436e35dad9bae54a744"
 
+angularx-qrcode@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/angularx-qrcode/-/angularx-qrcode-1.2.2.tgz#a5cda3a27307cefd3c8c54c5bdf150ebff35c788"
+  dependencies:
+    qrcodejs2 "0.0.2"
+
 ansi-escapes@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -7373,6 +7379,10 @@ q@^1.1.2, q@^1.4.1:
 qjobs@^1.1.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/qjobs/-/qjobs-1.2.0.tgz#c45e9c61800bd087ef88d7e256423bdd49e5d071"
+
+qrcodejs2@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/qrcodejs2/-/qrcodejs2-0.0.2.tgz#465afe5e39f19facecb932c11f7a186109146ae1"
 
 qs@6.5.1:
   version "6.5.1"

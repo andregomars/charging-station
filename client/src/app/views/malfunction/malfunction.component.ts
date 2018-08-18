@@ -17,7 +17,7 @@ export class MalfunctionComponent implements OnInit {
   public mainChartData1: Array<number> = [];
   public mainChartData2: Array<number> = [];
   public mainChartData3: Array<number> = [];
-  public mainChartLabels: Array<any> = Array.from(new Array(24), (val, index) => (index).toString().padStart(2, '0'));
+  public mainChartLabels: Array<any> = Array.from(new Array(25), (val, index) => (index).toString().padStart(2, '0'));
 
   public mainChartData: Array<any> = [
     {

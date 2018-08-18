@@ -46,6 +46,12 @@
                   {{ lastUpdatedTime | date:'MM/dd mm:ss'}}
                 </p>
               </div>
+              <div class="row">
+                <div class="col">
+                  <qrcode [qrdata]="qrCode" 
+                    [size]="128" [level]="'M'"></qrcode>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -246,7 +252,7 @@
             <div class="col-12 col-lg-6">
               <div class="row">
                 <div class="col-12 col-lg-6 text-left">
-                  <h6 class="">Last two week's alert times</h6>
+                  <h6 class="">Last two week's kWh</h6>
                 </div>
                 <div class="col-12 col-lg-6 text-right">
                   <div class="float-right cs-input-group-station">

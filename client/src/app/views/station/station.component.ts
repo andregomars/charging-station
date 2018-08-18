@@ -17,12 +17,13 @@ export class StationComponent implements OnInit {
   sid$: Observable<string>;
   station$: Observable<any>;
   logs$: Observable<any>;
+  qrCode: string;
 
   public mainChartElements = 24;
   public mainChartData1: Array<number> = [];
   public mainChartData2: Array<number> = [];
   public mainChartData3: Array<number> = [];
-  public mainChartLabels: Array<any> = Array.from(new Array(24), (val, index) => (index).toString().padStart(2, '0'));
+  public mainChartLabels: Array<any> = Array.from(new Array(25), (val, index) => (index).toString().padStart(2, '0'));
 
   public mainChartData: Array<any> = [
     {
@@ -115,9 +116,14 @@ export class StationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loadQRcode();
     this.loadStation();
     this.loadCharts();
     this.loadLogs();
+  }
+
+  private loadQRcode() {
+    this.qrCode = location.href;
   }
 
   private loadStation() {
@@ -125,6 +131,9 @@ export class StationComponent implements OnInit {
     this.sid$ = this.route.paramMap.pipe(
         map((params: ParamMap) => params.get('id'))
     );
+
+    console.log(this.route.snapshot.url);
+    console.log(location.href);
 
     this.station$ = this.sid$.pipe(
       concatMap(id => {

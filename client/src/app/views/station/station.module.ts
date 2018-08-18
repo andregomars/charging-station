@@ -5,6 +5,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { StationComponent } from './station.component';
 import { StationRoutingModule } from './station-routing.module';
@@ -20,6 +21,7 @@ import { StationListComponent } from './station-list.component';
     ChartsModule,
     NgxGaugeModule,
     BsDropdownModule,
+    QRCodeModule,
     ButtonsModule.forRoot()
   ],
   declarations: [
