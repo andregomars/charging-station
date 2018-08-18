@@ -4,7 +4,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-import { environment } from 'environments/environment';
+import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 import { SpinnerService } from './spinner.service';
 import { HttpClientModule } from '@angular/common/http';

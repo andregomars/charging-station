@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, pipe } from 'rxjs';
 import { delay, finalize } from 'rxjs/operators';
 
-import { environment, DataSourceType } from 'environments/environment';
+import { environment, DataSourceType } from '../../environments/environment';
 import { SpinnerService } from './spinner.service';
 
 
