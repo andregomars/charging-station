@@ -21,7 +21,9 @@
       <app-breadcrumb></app-breadcrumb>
     </ol>
     <div class="container-fluid">
-      <router-outlet></router-outlet>
+      <router-outlet>
+        <span *ngIf="showSpinner$ | async" class="spinner"></span>
+      </router-outlet>
     </div><!-- /.conainer-fluid -->
   </main>
   <!-- <app-aside [fixed]="true" [display]="false" [offCanvas]="false"></app-aside> -->

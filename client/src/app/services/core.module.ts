@@ -6,6 +6,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from 'environments/environment';
 import { AuthService } from './auth.service';
+import { SpinnerService } from './spinner.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AuthService } from './auth.service';
   ],
   declarations: [],
   providers: [
-    AuthService
+    AuthService,
+    SpinnerService
   ]
 })
 export class CoreModule {
@@ -23,7 +25,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        AuthService
+        AuthService,
+        SpinnerService
       ]
     };
 }

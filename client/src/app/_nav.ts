@@ -35,8 +35,21 @@ export const navItems = [
   },
   {
     name: 'Setting',
-    url: '/setting',
-    icon: 'fa fa-gear'
+    icon: 'fa fa-gear',
+    children: [
+      {
+        name: 'General',
+        url: '/setting',
+      },
+      {
+        name: 'Station',
+        url: '/setting/station',
+      },
+      {
+        name: 'Vehicle',
+        url: '/setting/vehicle',
+      }
+    ]
   },
   {
     name: 'Admin setting',

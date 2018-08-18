@@ -18,8 +18,5 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.users$ = this.authService.getAllUsers();
-    // this.users$ = this.authService.getAllUsers().pipe(
-      // map((users: User[]) => (users))
-    // );
   }
 }
