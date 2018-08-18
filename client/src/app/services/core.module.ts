@@ -7,9 +7,11 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from 'environments/environment';
 import { AuthService } from './auth.service';
 import { SpinnerService } from './spinner.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule

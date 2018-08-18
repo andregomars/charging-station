@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -17,7 +16,6 @@ import { VehicleSettingComponent } from './vehicle-setting.component';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     SettingRoutingModule,
     ChartsModule,

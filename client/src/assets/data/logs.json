@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "station_id": 5001,
+        "start_date": "2018-08-21 23:00:00",
+        "end_date": "2018-08-22 08:00:00",
+        "status": "Automatically",
+        "kWh": 120,
+        "vehicle_id": 12312
+    },
+    {
+        "id": 1,
+        "station_id": 5002,
+        "start_date": "2018-08-21 20:40:00",
+        "end_date": "2018-08-22 06:32:44",
+        "status": "Manually",
+        "kWh": 110,
+        "vehicle_id": 12340
+    },
+    {
+        "id": 1,
+        "station_id": 5003,
+        "start_date": "2018-08-22 23:00:00",
+        "end_date": "2018-08-23 07:00:00",
+        "status": "Override",
+        "kWh": 90,
+        "vehicle_id": 12355
+    }
+]

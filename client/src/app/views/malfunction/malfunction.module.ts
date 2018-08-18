@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -13,7 +12,6 @@ import { MalfunctionRoutingModule } from './malfunction-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     BsDropdownModule,
     MalfunctionRoutingModule,

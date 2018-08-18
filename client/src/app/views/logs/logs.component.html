@@ -1,0 +1,77 @@
+<div class="animated fadeIn">
+  <div class="card px-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col-12 div col-lg-5">
+              <div class="cs-input-group-search">
+                <div>
+                  <span>Station#</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 div col-lg-5">
+              <div class="cs-input-group-logs">
+                <div>
+                  <span>Date Range</span>
+                </div>
+                <input type="text" size="5" class="form-contrl" />
+                <div>
+                  <button class="btn btn-primary pt-0">
+                    <i class="fa fa-calendar"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 div col-lg-2">
+              <button class="btn btn-primary small">Export</button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <table class="table table-responsive-lg table-striped table-hover table-outline mb-0">
+              <thead class="text-white bg-primary">
+                <tr>
+                  <th>Charge station#</th>
+                  <th>Start time</th>
+                  <th>Finish time</th>
+                  <th>Operation status</th>
+                  <th>kWh</th>
+                  <th>Vehicle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let log of logs$ | async">
+                  <td>
+                    <div class="small text-muted">{{log.station_id}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{log.start_date}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{log.end_date}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{log.status}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{log.kWh}}</div>
+                  </td>
+                  <td>
+                    <div class="small text-muted">{{log.vehicle_id}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

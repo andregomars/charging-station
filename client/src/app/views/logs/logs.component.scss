@@ -1,0 +1,15 @@
+@import "src/scss/style.scss";
+
+$input-search-width-logs: 100px;
+
+.cs-input-group-logs {
+    @extend .cs-input-group-search;
+}
+
+.cs-input-group-logs span {
+    width: $input-search-width-logs !important;
+}
+
+table {
+    overflow-x: auto;
+}

@@ -2,8 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { DataService } from '../../services/data.service';
-import { map, finalize } from 'rxjs/operators';
-import { SpinnerService } from '../../services/spinner.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-station-list',
@@ -18,7 +17,6 @@ export class StationListComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private spinner: SpinnerService
   ) {
   }
 
@@ -27,10 +25,7 @@ export class StationListComponent implements OnInit {
   }
 
   loadData() {
-    this.spinner.load();
-    this.stations$ = this.dataService.getStations().pipe(
-      finalize(() => this.spinner.unload())
-    );
+    this.stations$ = this.dataService.getStations();
   }
 
   filterStation(stationCode: string) {

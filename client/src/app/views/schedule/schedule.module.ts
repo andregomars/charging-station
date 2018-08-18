@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -13,7 +12,6 @@ import { UiSwitchModule } from 'ngx-ui-switch';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     ScheduleRoutingModule,
     UiSwitchModule,

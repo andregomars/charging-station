@@ -76,6 +76,10 @@ export const routes: Routes = [
         loadChildren: './views/statistics/statistics.module#StatisticsModule'
       },
       {
+        path: 'logs',
+        loadChildren: './views/logs/logs.module#LogsModule'
+      },
+      {
         path: 'notifications',
         loadChildren: './views/notifications/notifications.module#NotificationsModule'
       },

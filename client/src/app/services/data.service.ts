@@ -70,6 +70,13 @@ export class DataService {
       .pipe(this.AfterApiCallOps);
   }
 
+  getLogs(): Observable<any> {
+    this.preApiCall();
+    return this.http
+      .get<any>(`${this.rootUrl}/logs.json`)
+      .pipe(this.AfterApiCallOps);
+  }
+
   getNotifications(): Observable<any> {
     this.preApiCall();
     return this.http

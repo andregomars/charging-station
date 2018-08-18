@@ -24,6 +24,11 @@ export const navItems = [
     icon: 'fa fa-exclamation-triangle'
   },
   {
+    name: 'Logs',
+    url: '/logs',
+    icon: 'fa fa-file-text-o'
+  },
+  {
     name: 'Statistics',
     url: '/statistics',
     icon: 'fa fa-area-chart'
@@ -40,14 +45,17 @@ export const navItems = [
       {
         name: 'General',
         url: '/setting',
+        icon: 'fa fa-angle-right'
       },
       {
         name: 'Station',
         url: '/setting/station',
+        icon: 'fa fa-angle-right'
       },
       {
         name: 'Vehicle',
         url: '/setting/vehicle',
+        icon: 'fa fa-angle-right'
       }
     ]
   },

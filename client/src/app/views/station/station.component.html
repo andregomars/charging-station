@@ -7,8 +7,7 @@
             <div class="col-12">
               <div class="row">
                 <div class="col-7 offset-3 col-sm-12 offset-sm-0 
-                d-flex flex-column justify-content-around cs-charging-status-bg"
-                [ngClass]="(station$ | async)?.imageClass">
+                d-flex flex-column justify-content-around cs-charging-status-bg" [ngClass]="(station$ | async)?.imageClass">
                   <div class="row">
                     <h3 class="col text-white text-center">
                       {{ (station$ | async)?.code }}
@@ -230,6 +229,71 @@
                 </div>
               </div>
               <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <img src="assets/img/station/charger map_2.png" class="img-fluid" alt="Charger Map">
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="row">
+                <div class="col-12 col-lg-6 text-left">
+                  <h6 class="">Last two week's alert times</h6>
+                </div>
+                <div class="col-12 col-lg-6 text-right">
+                  <div class="float-right cs-input-group-station">
+                    <div>
+                      <span>Date Range</span>
+                    </div>
+                    <input type="text" size="5" class="form-contrl" />
+                    <div>
+                      <button class="btn btn-primary pt-0">
+                        <i class="fa fa-calendar"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-wrapper">
+                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
+                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+              </div>
+              <div class="row mt-2">
+                <table class="table table-responsive-lg table-striped table-hover table-outline mb-0">
+                  <thead class="text-white bg-primary">
+                    <tr>
+                      <th>Start time</th>
+                      <th>Finish time</th>
+                      <th>Charged kWh</th>
+                      <th>Vehicle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let log of logs$ | async">
+                      <td>
+                        <div class="small text-muted">{{log.start_date}}</div>
+                      </td>
+                      <td>
+                        <div class="small text-muted">{{log.end_date}}</div>
+                      </td>
+                      <td>
+                        <div class="small text-muted">{{log.kWh}}</div>
+                      </td>
+                      <td>
+                        <div class="small text-muted">{{log.vehicle_id}}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

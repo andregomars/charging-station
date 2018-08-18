@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 
 import { DataService } from '../../services/data.service';
 import { Observable } from 'rxjs';
-import { SpinnerService } from '../../services/spinner.service';
-import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-malfunction',
@@ -113,14 +110,10 @@ export class MalfunctionComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private spinner: SpinnerService
   ) { }
 
   ngOnInit() {
-    this.spinner.load();
-    this.malfunctions$ = this.dataService.getMalfunctions().pipe(
-      finalize(() => this.spinner.unload())
-    );
+    this.malfunctions$ = this.dataService.getMalfunctions();
 
         // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
