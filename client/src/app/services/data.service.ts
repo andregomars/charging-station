@@ -107,7 +107,10 @@ export class DataService {
 
   private preApiCall() {
     if (this.spinnerEnabled) {
-      this.spinner.load();
+      // prevent Change Detection when method is invoked by component.
+      setTimeout(() => {
+          this.spinner.load();
+        }, 0);
     }
   }
 }

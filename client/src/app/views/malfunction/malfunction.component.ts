@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 
@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-malfunction',
   templateUrl: './malfunction.component.html',
-  styleUrls: ['./malfunction.component.scss']
+  styleUrls: ['./malfunction.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MalfunctionComponent implements OnInit {
   malfunctions$: Observable<any>;

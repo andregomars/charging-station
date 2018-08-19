@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   selector: 'app-dashboard',
   templateUrl: './simple-layout.component.html',
   styleUrls: ['./simple-layout.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleLayoutComponent implements OnInit {
   public navItems = navItems;

@@ -46,10 +46,10 @@
                   {{ lastUpdatedTime | date:'MM/dd mm:ss'}}
                 </p>
               </div>
-              <div class="row">
-                <div class="col">
-                  <qrcode [qrdata]="qrCode" 
-                    [size]="128" [level]="'M'"></qrcode>
+              <div class="row pb-3">
+                <div class="col cs-qr-code">
+                  <qrcode [qrdata]="qrCode" [usesvg]="'true'" 
+                    [level]="'M'"></qrcode>
                 </div>
               </div>
             </div>

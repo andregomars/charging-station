@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
@@ -10,7 +10,8 @@ import { DataService } from '../../services/data.service';
 @Component({
   selector: 'app-station',
   templateUrl: './station.component.html',
-  styleUrls: ['./station.component.scss']
+  styleUrls: ['./station.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StationComponent implements OnInit {
   lastUpdatedTime = new Date();
@@ -131,9 +132,6 @@ export class StationComponent implements OnInit {
     this.sid$ = this.route.paramMap.pipe(
         map((params: ParamMap) => params.get('id'))
     );
-
-    console.log(this.route.snapshot.url);
-    console.log(location.href);
 
     this.station$ = this.sid$.pipe(
       concatMap(id => {

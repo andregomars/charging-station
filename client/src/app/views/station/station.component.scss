@@ -27,7 +27,6 @@ $button-force-width: 100px;
 .cs-charging-status-bg {
     height: 280px;
     width: 200px;
-    // background: transparent url('assets/img/station/charging.gif') no-repeat center center /cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -55,4 +54,9 @@ $button-force-width: 100px;
 
 .cs-charging-left-time {
   width:calc(100% - 300px);
+}
+
+.cs-qr-code {
+    width: 150px; 
+    height: 150px
 }

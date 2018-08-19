@@ -5,13 +5,13 @@ import {
 } from '@angular/router';
 
 import { AdminSettingComponent } from './admin-setting.component';
-import { AdminGuard } from '../../guards/admin.guard';
+import { ViewGuard } from '../../guards/view.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminSettingComponent,
-    canActivate: [AdminGuard],
+    canActivate: [ViewGuard],
     data: {
       title: 'Admin Setting'
     },
