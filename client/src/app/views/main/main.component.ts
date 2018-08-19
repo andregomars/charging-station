@@ -69,6 +69,8 @@ export class MainComponent implements OnInit {
         ticks: {
           beginAtZero: true,
           maxTicksLimit: 5,
+          stepSize: Math.ceil(400 / 5),
+          max: 400
         }
       }]
     },
@@ -209,6 +211,7 @@ export class MainComponent implements OnInit {
       });
 
       this.fillChartData(this.datakWh, timeFormatedData);
+      this.datakWh = this.datakWh.map(r => r.kWh);
 
       console.log(this.datakWh);
     });
