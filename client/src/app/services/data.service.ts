@@ -41,6 +41,12 @@ export class DataService {
     }
   }
 
+  getkWhToday(): Observable<any> {
+    this.preApiCall();
+    return this.http
+      .get<any>(`${this.rootUrl}/kwh-today.json`)
+      .pipe(this.AfterApiCallOps);
+  }
 
   getStations(): Observable<any> {
     this.preApiCall();
