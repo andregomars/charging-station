@@ -48,6 +48,13 @@ export class DataService {
       .pipe(this.AfterApiCallOps);
   }
 
+  getCurrentToday(): Observable<any> {
+    this.preApiCall();
+    return this.http
+      .get<any>(`${this.rootUrl}/current-today.json`)
+      .pipe(this.AfterApiCallOps);
+  }
+
   getStations(): Observable<any> {
     this.preApiCall();
     return this.http

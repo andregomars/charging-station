@@ -66,8 +66,8 @@
                 <h6 class="col">Today's kWh</h6>
               </div>
               <div class="chart-wrapper"> 
-                <canvas baseChart class="chart" [datasets]="datakWh" [labels]="mainChartLabels" 
-                  [options]="optionskWh" [colors]="colourskWh"
+                <canvas baseChart class="chart" *ngIf="datakWhToday.length > 0" [datasets]="datakWhToday" [labels]="labelskWhToday" 
+                  [options]="optionskWhToday" [colors]="colourskWhToday"
                   [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
@@ -76,7 +76,8 @@
                 <h6 class="col">Today's current</h6>
               </div>
               <div class="chart-wrapper"> 
-                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
+                <canvas baseChart class="chart" *ngIf="dataCurrentToday.length > 0"  [datasets]="dataCurrentToday" [labels]="labelsCurrentToday" 
+                  [options]="optionsCurrentToday" [colors]="coloursCurrentToday"
                   [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>

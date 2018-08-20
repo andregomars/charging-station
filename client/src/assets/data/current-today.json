@@ -1,0 +1,69 @@
+[ {
+  "maxcurrent" : 152.1,
+  "mincurrent" : 122.0,
+  "time" : "0:00"
+}, {
+  "maxcurrent" : 154.4,
+  "mincurrent" : 121.7,
+  "time" : "1:00"
+}, {
+  "maxcurrent" : 152.3,
+  "mincurrent" : 127.1,
+  "time" : "2:00"
+}, {
+  "maxcurrent" : 151.3,
+  "mincurrent" : 127.2,
+  "time" : "3:00"
+}, {
+  "maxcurrent" : 148.7,
+  "mincurrent" : 123.6,
+  "time" : "4:00"
+}, {
+  "maxcurrent" : 153.1,
+  "mincurrent" : 137.9,
+  "time" : "5:00"
+}, {
+  "maxcurrent" : 150.1,
+  "mincurrent" : 137.4,
+  "time" : "6:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "7:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "8:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "9:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "10:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "11:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "11:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "12:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "13:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "14:00"
+}, {
+  "maxcurrent" : 0,
+  "mincurrent" : 0,
+  "time" : "15:00"
+} ]

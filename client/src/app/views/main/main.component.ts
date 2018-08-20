@@ -10,11 +10,14 @@ import { DataService } from '../../services/data.service';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent implements OnInit {
-  datakWh: any;
+  hoursOfDay = 25;
+  labelskWhToday: string[];
+  labelsCurrentToday: string[];
+  datakWhToday = new Array<any>();
+  dataCurrentToday = new Array<any>();
 
-  // mainChart
 
-  public hoursOfDay = 25;
+  public mainChartLabels: Array<string> = [];
   public mainChartData1: Array<number> = [];
   public mainChartData2: Array<number> = [];
   public mainChartData3: Array<number> = [];
@@ -34,11 +37,8 @@ export class MainComponent implements OnInit {
     }
   ];
 
-  // ['00', '01', ..., '24']
-  public mainChartLabels: Array<any> =
-    Array.from(new Array(this.hoursOfDay), (val, index) => (index).toString().padStart(2, '0'));
-
-  public optionskWh: any = {
+  // kWhToday start:
+  public optionskWhToday: any = {
     tooltips: {
       enabled: false,
       custom: CustomTooltips,
@@ -69,8 +69,8 @@ export class MainComponent implements OnInit {
         ticks: {
           beginAtZero: true,
           maxTicksLimit: 5,
-          stepSize: Math.ceil(400 / 5),
-          max: 400
+          // stepSize: Math.ceil(400 / 5),
+          // max: 400
         }
       }]
     },
@@ -89,6 +89,95 @@ export class MainComponent implements OnInit {
       display: false
     }
   };
+
+  public colourskWhToday: Array<any> = [
+    {
+      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      borderColor: getStyle('--info'),
+      pointHoverBackgroundColor: '#fff'
+    }
+  ];
+  // kWhToday end
+
+  // CurrentToday start:
+  public optionsCurrentToday: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips,
+      intersect: true,
+      mode: 'index',
+      position: 'nearest',
+      callbacks: {
+        labelColor: function(tooltipItem, chart) {
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
+        }
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        gridLines: {
+          drawOnChartArea: false,
+        },
+        ticks: {
+          maxRotation: 0,
+          callback: function(tick, index, array) {
+                return (index % 2) ? null : tick;
+          }
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          maxTicksLimit: 5
+        }
+      }]
+    },
+    elements: {
+      line: {
+        borderWidth: 2
+      },
+      point: {
+        radius: 0,
+        hitRadius: 10,
+        hoverRadius: 4,
+        hoverBorderWidth: 3,
+      }
+    },
+    legend: {
+      display: false
+    }
+  };
+
+  public coloursCurrentToday: Array<any> = [
+    {
+      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      borderColor: getStyle('--info'),
+      pointHoverBackgroundColor: '#fff'
+    }
+  ];
+  // CurrentToday end
+
+  public mainChartColours: Array<any> = [
+    { // brandInfo
+      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      borderColor: getStyle('--info'),
+      pointHoverBackgroundColor: '#fff'
+    },
+    { // brandSuccess
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--success'),
+      pointHoverBackgroundColor: '#fff'
+    },
+    { // brandDanger
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--danger'),
+      pointHoverBackgroundColor: '#fff',
+      borderWidth: 1,
+      borderDash: [8, 5]
+    }
+  ];
 
   public mainChartOptions: any = {
     tooltips: {
@@ -142,33 +231,6 @@ export class MainComponent implements OnInit {
     }
   };
 
-  public colourskWh: Array<any> = [
-    { // brandInfo
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
-      borderColor: getStyle('--info'),
-      pointHoverBackgroundColor: '#fff'
-    }
-  ];
-
-  public mainChartColours: Array<any> = [
-    { // brandInfo
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
-      borderColor: getStyle('--info'),
-      pointHoverBackgroundColor: '#fff'
-    },
-    { // brandSuccess
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--success'),
-      pointHoverBackgroundColor: '#fff'
-    },
-    { // brandDanger
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5]
-    }
-  ];
   public mainChartLegend = false;
   public mainChartType = 'line';
 
@@ -181,7 +243,10 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadkWhData();
+    this.initLabels();
+
+    this.loadkWhTodayData();
+    this.loadCurrentTodayData();
 
     // generate random values for mainChart
     for (let i = 0; i <= this.hoursOfDay; i++) {
@@ -191,36 +256,58 @@ export class MainComponent implements OnInit {
     }
   }
 
-  private loadkWhData() {
-    this.datakWh =
-      Array.from(new Array(this.hoursOfDay), (val, index) =>
-        (index).toString().padStart(2, '0')
-      ).map(r => {
-        return {
-          kWh: 0,
-          time: r
-        };
-      });
+  private initLabels() {
+    // ['00', '01', '02', ...'24']
+    const hoursOfDayLabels =
+      Array.from(new Array(this.hoursOfDay), (val, index) => (index).toString().padStart(2, '0'));
+    this.labelskWhToday = hoursOfDayLabels;
+    this.labelsCurrentToday = hoursOfDayLabels;
+    this.mainChartLabels = hoursOfDayLabels;
+  }
 
+  private loadkWhTodayData() {
     this.dataService.getkWhToday().subscribe(data => {
       const timeFormatedData = data.map(r => {
-        const obj = {};
-        const key = r.time.replace(/:\d+/g, '').padStart(2, '0');
-        obj[key] = r.kWh;
-        return obj;
+        return {
+          time: r.time.replace(/:\d+/g, '').padStart(2, '0'),
+          kWh: r.kWh
+        };
       });
-
-      this.fillChartData(this.datakWh, timeFormatedData);
-      this.datakWh = this.datakWh.map(r => r.kWh);
-
-      console.log(this.datakWh);
+      this.datakWhToday =
+        this.fillChartData(this.labelskWhToday, timeFormatedData, ['kWh']);
     });
   }
 
-  private fillChartData(chartData: any[], sourceData: any[]) {
-    for (const row of chartData) {
-      row.kWh = sourceData[row.time] ? sourceData[row.time] : 0;
+  private loadCurrentTodayData() {
+    this.dataService.getCurrentToday().subscribe(data => {
+      const timeFormatedData = data.map(r => {
+        return {
+          time: r.time.replace(/:\d+/g, '').padStart(2, '0'),
+          mincurrent: r.mincurrent,
+          maxcurrent: r.maxcurrent
+        };
+      });
+      this.dataCurrentToday =
+        this.fillChartData(this.labelsCurrentToday, timeFormatedData, ['mincurrent', 'maxcurrent']);
+    });
+  }
+
+  private fillChartData(labels: string[], sourceData: any[], keys: string[]): any[] {
+    const output = keys.map((key) => {
+      return {
+        data: new Array<number>(),
+        label: key
+      };
+    });
+
+    for (const label of labels) {
+      const data = sourceData.find(s => s.time === label);
+      for (let i = 0; i < keys.length; i++) {
+        output[i].data.push(data ? data[keys[i]] : 0);
+      }
     }
+
+    return output;
   }
 
 }
