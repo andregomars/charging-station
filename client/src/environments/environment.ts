@@ -24,5 +24,5 @@ export const environment = {
   reportFallbackMonths: 3,
   delayEmulatorTimer: 500,
   spinnerEnabled: true,
-  dataSource: DataSourceType.Firebase
+  dataSource: DataSourceType.Local
 };

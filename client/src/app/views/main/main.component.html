@@ -86,8 +86,9 @@
                 <h6 class="col">Last two week's kWh</h6>
               </div>
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
-                  [legend]="mainChartLegend" [chartType]="'bar'"></canvas>
+                <canvas baseChart class="chart" *ngIf="datakWh2weeks.length > 0" [datasets]="datakWh2weeks" 
+                  [labels]="labelskWh2weeks" [options]="optionskWh2weeks" [colors]="colourskWh2weeks"
+                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
             <div class="col-12 col-xl-6">
@@ -96,7 +97,7 @@
               </div>
               <div class="chart-wrapper">
                 <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
-                  [legend]="mainChartLegend" [chartType]="'bar'"></canvas>
+                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
           </div>
