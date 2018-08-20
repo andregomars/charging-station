@@ -96,8 +96,9 @@
                 <h6 class="col">Last two week's alert times</h6>
               </div>
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
-                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                  <canvas baseChart class="chart" *ngIf="datakAlertTimes2weeks.length > 0" [datasets]="datakAlertTimes2weeks" 
+                      [labels]="labelsAlertTimes2weeks" [options]="optionsAlertTimes2weeks" [colors]="coloursAlertTimes2weeks"
+                      [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
               </div>
             </div>
           </div>

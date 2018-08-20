@@ -17,9 +17,11 @@ export class MainComponent implements OnInit {
   labelskWhToday: string[];
   labelsCurrentToday: string[];
   labelskWh2weeks: string[];
+  labelsAlertTimes2weeks: string[];
   datakWhToday = new Array<any>();
   dataCurrentToday = new Array<any>();
   datakWh2weeks = new Array<any>();
+  datakAlertTimes2weeks = new Array<any>();
 
   public mainChartLabels: Array<string> = [];
   public mainChartData1: Array<number> = [];
@@ -230,6 +232,68 @@ export class MainComponent implements OnInit {
   ];
   // kWh 2weeks end
 
+  // alert times 2weeks start:
+  public optionsAlertTimes2weeks: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips,
+      intersect: true,
+      mode: 'index',
+      position: 'nearest',
+      callbacks: {
+        labelColor: function(tooltipItem, chart) {
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
+        }
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        gridLines: {
+          drawOnChartArea: false,
+        },
+        ticks: {
+          maxRotation: 0,
+          callback: function(tick, index, array) {
+                return tick.toString().split('-')[2];
+          }
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          maxTicksLimit: 5,
+          // stepSize: Math.ceil(400 / 5),
+          // max: 400
+        }
+      }]
+    },
+    elements: {
+      line: {
+        borderWidth: 2
+      },
+      point: {
+        radius: 0,
+        hitRadius: 10,
+        hoverRadius: 4,
+        hoverBorderWidth: 3,
+      }
+    },
+    legend: {
+      display: false
+    }
+  };
+
+  public coloursAlertTimes2weeks: Array<any> = [
+    {
+      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      borderColor: getStyle('--info'),
+      pointHoverBackgroundColor: '#fff'
+    }
+  ];
+  // alert times 2weeks end
+
   public mainChartColours: Array<any> = [
     { // brandInfo
       backgroundColor: hexToRgba(getStyle('--info'), 10),
@@ -319,6 +383,7 @@ export class MainComponent implements OnInit {
     this.loadkWhTodayData();
     this.loadCurrentTodayData();
     this.loadkWh2weeksData();
+    this.loadAlertTimes2weeksData();
 
     // generate random values for mainChart
     for (let i = 0; i <= this.hoursOfDay; i++) {
@@ -339,6 +404,7 @@ export class MainComponent implements OnInit {
     const daysof2WeeksLabels =
       Array.from(new Array(this.daysOf2weeks), (val, index) => moment('2018-03-17').add(index, 'days').format('YYYY-MM-DD') );
     this.labelskWh2weeks = daysof2WeeksLabels;
+    this.labelsAlertTimes2weeks = daysof2WeeksLabels;
 
     this.mainChartLabels = hoursOfDayLabels;
   }
@@ -380,6 +446,19 @@ export class MainComponent implements OnInit {
       });
       this.datakWh2weeks =
         this.fillChartData(this.labelskWh2weeks, dateFormatedData, 'date', ['kWh']);
+    });
+  }
+
+  private loadAlertTimes2weeksData() {
+    this.dataService.getAlertTimes2week().subscribe(data => {
+      const dateFormatedData = data.map(r => {
+        return {
+          date: r.date,
+          alerttimes: r.alerttimes
+        };
+      });
+      this.datakAlertTimes2weeks =
+        this.fillChartData(this.labelsAlertTimes2weeks, dateFormatedData, 'date', ['alerttimes']);
     });
   }
 
