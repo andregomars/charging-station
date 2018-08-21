@@ -12,8 +12,11 @@ import { DataService } from '../../services/data.service';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent implements OnInit {
+  chartLegend = false;
+  chartType = 'line';
   hoursOfDay = 25;
   daysOf2weeks = 14;
+
   labelskWhToday: string[];
   labelsCurrentToday: string[];
   labelskWh2weeks: string[];
@@ -22,26 +25,6 @@ export class MainComponent implements OnInit {
   dataCurrentToday = new Array<any>();
   datakWh2weeks = new Array<any>();
   datakAlertTimes2weeks = new Array<any>();
-
-  public mainChartLabels: Array<string> = [];
-  public mainChartData1: Array<number> = [];
-  public mainChartData2: Array<number> = [];
-  public mainChartData3: Array<number> = [];
-
-  public mainChartData: Array<any> = [
-    {
-      data: this.mainChartData1,
-      label: 'Current'
-    },
-    {
-      data: this.mainChartData2,
-      label: 'Previous'
-    },
-    {
-      data: this.mainChartData3,
-      label: 'BEP'
-    }
-  ];
 
   // kWhToday start:
   public optionskWhToday: any = {
@@ -294,90 +277,12 @@ export class MainComponent implements OnInit {
   ];
   // alert times 2weeks end
 
-  public mainChartColours: Array<any> = [
-    { // brandInfo
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
-      borderColor: getStyle('--info'),
-      pointHoverBackgroundColor: '#fff'
-    },
-    { // brandSuccess
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--success'),
-      pointHoverBackgroundColor: '#fff'
-    },
-    { // brandDanger
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5]
-    }
-  ];
-
-  public mainChartOptions: any = {
-    tooltips: {
-      enabled: false,
-      custom: CustomTooltips,
-      intersect: true,
-      mode: 'index',
-      position: 'nearest',
-      callbacks: {
-        labelColor: function(tooltipItem, chart) {
-          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
-        }
-      }
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      xAxes: [{
-        gridLines: {
-          drawOnChartArea: false,
-        },
-        ticks: {
-          maxRotation: 0,
-          callback: function(tick, index, array) {
-                return (index % 2) ? null : tick;
-          }
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250
-        }
-      }]
-    },
-    elements: {
-      line: {
-        borderWidth: 2
-      },
-      point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-        hoverBorderWidth: 3,
-      }
-    },
-    legend: {
-      display: false
-    }
-  };
-
-  public mainChartLegend = false;
-  public mainChartType = 'line';
-
-  public random(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
   constructor(
     private dataService: DataService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.initLabels();
 
     this.loadkWhTodayData();
@@ -385,12 +290,6 @@ export class MainComponent implements OnInit {
     this.loadkWh2weeksData();
     this.loadAlertTimes2weeksData();
 
-    // generate random values for mainChart
-    for (let i = 0; i <= this.hoursOfDay; i++) {
-      this.mainChartData1.push(this.random(50, 200));
-      this.mainChartData2.push(this.random(80, 100));
-      this.mainChartData3.push(55);
-    }
   }
 
   private initLabels() {
@@ -406,7 +305,6 @@ export class MainComponent implements OnInit {
     this.labelskWh2weeks = daysof2WeeksLabels;
     this.labelsAlertTimes2weeks = daysof2WeeksLabels;
 
-    this.mainChartLabels = hoursOfDayLabels;
   }
 
   private loadkWhTodayData() {

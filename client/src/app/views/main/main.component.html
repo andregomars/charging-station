@@ -68,7 +68,7 @@
               <div class="chart-wrapper"> 
                 <canvas baseChart class="chart" *ngIf="datakWhToday.length > 0" [datasets]="datakWhToday" [labels]="labelskWhToday" 
                   [options]="optionskWhToday" [colors]="colourskWhToday"
-                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                  [legend]="chartLegend" [chartType]="chartType"></canvas>
               </div>
             </div>
             <div class="col-12 col-xl-6">
@@ -78,7 +78,7 @@
               <div class="chart-wrapper"> 
                 <canvas baseChart class="chart" *ngIf="dataCurrentToday.length > 0"  [datasets]="dataCurrentToday" [labels]="labelsCurrentToday" 
                   [options]="optionsCurrentToday" [colors]="coloursCurrentToday"
-                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                  [legend]="chartLegend" [chartType]="chartType"></canvas>
               </div>
             </div>
             <div class="col-12 col-xl-6">
@@ -88,7 +88,7 @@
               <div class="chart-wrapper">
                 <canvas baseChart class="chart" *ngIf="datakWh2weeks.length > 0" [datasets]="datakWh2weeks" 
                   [labels]="labelskWh2weeks" [options]="optionskWh2weeks" [colors]="colourskWh2weeks"
-                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                  [legend]="chartLegend" [chartType]="chartType"></canvas>
               </div>
             </div>
             <div class="col-12 col-xl-6">
@@ -98,7 +98,7 @@
               <div class="chart-wrapper">
                   <canvas baseChart class="chart" *ngIf="datakAlertTimes2weeks.length > 0" [datasets]="datakAlertTimes2weeks" 
                       [labels]="labelsAlertTimes2weeks" [options]="optionsAlertTimes2weeks" [colors]="coloursAlertTimes2weeks"
-                      [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                      [legend]="chartLegend" [chartType]="chartType"></canvas>
               </div>
             </div>
           </div>
