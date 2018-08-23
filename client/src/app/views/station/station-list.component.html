@@ -71,26 +71,6 @@
                 </div>
               </div>
             </div>
-            <!-- <ngx-datatable class="material col m-3" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
-              <ngx-datatable-column name="Stations">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  <div class="row">
-                    <a [routerLink]="['station', row['code']]">
-                      {{row['code']}}
-                    </a>
-                    <div class="col">
-                      {{row['status']}}
-                    </div>
-                    <div class="col">
-                      {{row['time']}}
-                    </div>
-                    <div class="col">
-                      {{row['value']}}
-                    </div>
-                  </div>
-                </ng-template>
-              </ngx-datatable-column>
-            </ngx-datatable> -->
           </div>
         </div>
       </div>
@@ -100,19 +80,15 @@
         <div class="card-body">
           <div class="row no-gutters">
             <div class="col-6">
-              <ngx-gauge size="100" [type]="'semi'" [value]="68.3" [label]="'kW'" [thick]="6" [append]="">
+              <ngx-gauge size="100" [type]="'semi'" [value]="85" [label]="'V'" [thick]="12" [append]="">
               </ngx-gauge>
             </div>
             <div class="col-6">
-              <ngx-gauge size="100" [type]="'semi'" [value]="17.4" [label]="'kW'" [thick]="6" [append]="">
+              <ngx-gauge size="100" [type]="'semi'" [value]="57" [label]="'A'" [thick]="12" [append]="">
               </ngx-gauge>
             </div>
-            <div class="col-6">
-              <ngx-gauge size="100" [type]="'semi'" [value]="85" [label]="'V'" [thick]="6" [append]="">
-              </ngx-gauge>
-            </div>
-            <div class="col-6">
-              <ngx-gauge size="100" [type]="'semi'" [value]="57" [label]="'A'" [thick]="6" [append]="">
+            <div class="col-12 text-center">
+              <ngx-gauge size="100" [type]="'semi'" [value]="68.3" [label]="'kW'" [thick]="12" [append]="">
               </ngx-gauge>
             </div>
           </div>

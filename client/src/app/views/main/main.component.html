@@ -88,7 +88,7 @@
               <div class="chart-wrapper">
                 <canvas baseChart class="chart" *ngIf="datakWh2weeks.length > 0" [datasets]="datakWh2weeks" 
                   [labels]="labelskWh2weeks" [options]="optionskWh2weeks" [colors]="colourskWh2weeks"
-                  [legend]="chartLegend" [chartType]="chartType"></canvas>
+                  [legend]="chartLegend" [chartType]="'bar'"></canvas>
               </div>
             </div>
             <div class="col-12 col-xl-6">
@@ -96,9 +96,9 @@
                 <h6 class="col">Last two week's alert times</h6>
               </div>
               <div class="chart-wrapper">
-                  <canvas baseChart class="chart" *ngIf="datakAlertTimes2weeks.length > 0" [datasets]="datakAlertTimes2weeks" 
+                  <canvas baseChart class="chart" *ngIf="dataAlertTimes2weeks.length > 0" [datasets]="dataAlertTimes2weeks" 
                       [labels]="labelsAlertTimes2weeks" [options]="optionsAlertTimes2weeks" [colors]="coloursAlertTimes2weeks"
-                      [legend]="chartLegend" [chartType]="chartType"></canvas>
+                      [legend]="chartLegend" [chartType]="'bar'"></canvas>
               </div>
             </div>
           </div>

@@ -269,8 +269,9 @@
                 </div>
               </div>
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
-                  [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
+                <canvas baseChart class="chart" *ngIf="datakWh2weeks.length > 0" [datasets]="datakWh2weeks" 
+                  [labels]="labelskWh2weeks" [options]="optionskWh2weeks" [colors]="colourskWh2weeks"
+                  [legend]="chartLegend" [chartType]="'bar'"></canvas>
               </div>
               <div class="row mt-2">
                 <table class="table table-responsive-lg table-striped table-hover table-outline mb-0">

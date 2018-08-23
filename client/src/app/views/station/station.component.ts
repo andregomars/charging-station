@@ -1,9 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { Observable } from 'rxjs';
 import { map, tap, concatMap } from 'rxjs/operators';
+import * as moment from 'moment';
 
 import { DataService } from '../../services/data.service';
 
@@ -20,96 +21,71 @@ export class StationComponent implements OnInit {
   logs$: Observable<any>;
   qrCode: string;
 
-  public mainChartElements = 24;
-  public mainChartData1: Array<number> = [];
-  public mainChartData2: Array<number> = [];
-  public mainChartData3: Array<number> = [];
-  public mainChartLabels: Array<any> = Array.from(new Array(25), (val, index) => (index).toString().padStart(2, '0'));
+  chartLegend = false;
+  chartType = 'line';
+  daysOf2weeks = 14;
+  labelskWh2weeks: string[];
+  datakWh2weeks = new Array<any>();
 
-  public mainChartData: Array<any> = [
-    {
-      data: this.mainChartData1,
-      label: 'Current'
+  // kWh 2weeks start:
+  public optionskWh2weeks: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips,
+      intersect: true,
+      mode: 'index',
+      position: 'nearest',
+      callbacks: {
+        labelColor: function(tooltipItem, chart) {
+          return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
+        }
+      }
     },
-    {
-      data: this.mainChartData2,
-      label: 'Previous'
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        gridLines: {
+          drawOnChartArea: false,
+        },
+        ticks: {
+          maxRotation: 25,
+          callback: function(tick: string, index: number, array: any[]) {
+            return `${tick.split('-')[1]}/${tick.split('-')[2]}`;
+          }
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          maxTicksLimit: 5,
+        }
+      }]
     },
-    {
-      data: this.mainChartData3,
-      label: 'BEP'
+    elements: {
+      line: {
+        borderWidth: 2
+      },
+      point: {
+        radius: 0,
+        hitRadius: 10,
+        hoverRadius: 4,
+        hoverBorderWidth: 3,
+      }
+    },
+    legend: {
+      display: false
     }
-  ];
+  };
 
-    public mainChartColours: Array<any> = [
-    { // brandInfo
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
+  public colourskWh2weeks: Array<any> = [
+    {
+      backgroundColor: hexToRgba(getStyle('--info'), 50),
       borderColor: getStyle('--info'),
       pointHoverBackgroundColor: '#fff'
-    },
-    { // brandSuccess
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--success'),
-      pointHoverBackgroundColor: '#fff'
-    },
-    { // brandDanger
-      backgroundColor: 'transparent',
-      borderColor: getStyle('--danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5]
     }
   ];
-  public mainChartLegend = false;
-  public mainChartType = 'line';
-
-  public mainChartOptions: any = {
-    tooltips: {
-        enabled: false,
-        custom: CustomTooltips,
-        intersect: true,
-        mode: 'index',
-        position: 'nearest',
-        callbacks: {
-          labelColor: function(tooltipItem, chart) {
-            return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].borderColor };
-          }
-        }
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        xAxes: [{
-          gridLines: {
-            drawOnChartArea: false,
-          },
-
-        }],
-        yAxes: [{
-          ticks: {
-            beginAtZero: true,
-            maxTicksLimit: 5,
-            stepSize: Math.ceil(250 / 5),
-            max: 250
-          }
-        }]
-      },
-      elements: {
-        line: {
-          borderWidth: 2
-        },
-        point: {
-          radius: 0,
-          hitRadius: 10,
-          hoverRadius: 4,
-          hoverBorderWidth: 3,
-        }
-      },
-      legend: {
-        display: false
-      }
-    };
-
+  // kWh 2weeks end
 
   constructor(
     private route: ActivatedRoute,
@@ -117,9 +93,10 @@ export class StationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.initLabels();
     this.loadQRcode();
     this.loadStation();
-    this.loadCharts();
+    this.loadkWh2weeksData();
     this.loadLogs();
   }
 
@@ -147,14 +124,45 @@ export class StationComponent implements OnInit {
     );
   }
 
-  private loadCharts() {
-        // generate random values for mainChart
-    for (let i = 0; i <= this.mainChartElements; i++) {
-      this.mainChartData1.push(this.random(50, 200));
-      this.mainChartData2.push(this.random(80, 100));
-      this.mainChartData3.push(55);
-    }
+  private loadkWh2weeksData() {
+    this.dataService.getLogs().subscribe(data => {
+      const dateFormatedData = data.map(r => {
+        return {
+          date: moment(r.start_date).format('YYYY-MM-DD'),
+          kWh: r.kWh
+        };
+      });
+      this.datakWh2weeks =
+        this.fillChartData(this.labelskWh2weeks, dateFormatedData, 'date', ['kWh']);
+    });
   }
+
+  private initLabels() {
+    // ['2018-03-17', ...'2018-03-30']
+    const daysof2WeeksLabels =
+      Array.from(new Array(this.daysOf2weeks), (val, index) => moment('2018-03-17').add(index, 'days').format('YYYY-MM-DD') );
+    this.labelskWh2weeks = daysof2WeeksLabels;
+
+  }
+
+  private fillChartData(labels: string[], sourceData: any[], timeKey: string, keys: string[]): any[] {
+    const output = keys.map((key) => {
+      return {
+        data: new Array<number>(),
+        label: key
+      };
+    });
+
+    for (const label of labels) {
+      const data = sourceData.find(s => s[timeKey] === label);
+      for (let i = 0; i < keys.length; i++) {
+        output[i].data.push(data ? data[keys[i]] : null);
+      }
+    }
+
+    return output;
+  }
+
 
   private loadLogs() {
     this.logs$ = this.dataService.getLogs();

@@ -13,6 +13,11 @@ $input-text-width-search: 80px;
 $input-text-width-switch: 110px;
 $input-group-height: 38px;
 
+.cs-submit {
+    @extend .shadow;
+    width: 100px;
+}
+
 .cs-input-group {
     @extend .input-group; 
     @extend .py-1;

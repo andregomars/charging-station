@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import { Observable } from 'rxjs';
 import * as moment from 'moment';
 
 import { DataService } from '../../services/data.service';
@@ -24,7 +23,7 @@ export class MainComponent implements OnInit {
   datakWhToday = new Array<any>();
   dataCurrentToday = new Array<any>();
   datakWh2weeks = new Array<any>();
-  datakAlertTimes2weeks = new Array<any>();
+  dataAlertTimes2weeks = new Array<any>();
 
   // kWhToday start:
   public optionskWhToday: any = {
@@ -175,9 +174,12 @@ export class MainComponent implements OnInit {
           drawOnChartArea: false,
         },
         ticks: {
-          maxRotation: 0,
-          callback: function(tick, index, array) {
-                return tick.toString().split('-')[2];
+          maxRotation: 25,
+          callback: function(tick: string, index: number, array: any[]) {
+                return `${tick.split('-')[1]}/${tick.split('-')[2]}`;
+                // const tickFormated = `${tick.split('-')[1]}/${tick.split('-')[2]}`;
+                // return !(index % 2) || index === array.length - 1 ?
+                //   tickFormated : null;
           }
         }
       }],
@@ -208,7 +210,7 @@ export class MainComponent implements OnInit {
 
   public colourskWh2weeks: Array<any> = [
     {
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      backgroundColor: hexToRgba(getStyle('--info'), 50),
       borderColor: getStyle('--info'),
       pointHoverBackgroundColor: '#fff'
     }
@@ -237,9 +239,9 @@ export class MainComponent implements OnInit {
           drawOnChartArea: false,
         },
         ticks: {
-          maxRotation: 0,
+          maxRotation: 25,
           callback: function(tick, index, array) {
-                return tick.toString().split('-')[2];
+                return `${tick.split('-')[1]}/${tick.split('-')[2]}`;
           }
         }
       }],
@@ -270,7 +272,7 @@ export class MainComponent implements OnInit {
 
   public coloursAlertTimes2weeks: Array<any> = [
     {
-      backgroundColor: hexToRgba(getStyle('--info'), 10),
+      backgroundColor: hexToRgba(getStyle('--info'), 50),
       borderColor: getStyle('--info'),
       pointHoverBackgroundColor: '#fff'
     }
@@ -355,7 +357,7 @@ export class MainComponent implements OnInit {
           alerttimes: r.alerttimes
         };
       });
-      this.datakAlertTimes2weeks =
+      this.dataAlertTimes2weeks =
         this.fillChartData(this.labelsAlertTimes2weeks, dateFormatedData, 'date', ['alerttimes']);
     });
   }
@@ -371,7 +373,7 @@ export class MainComponent implements OnInit {
     for (const label of labels) {
       const data = sourceData.find(s => s[timeKey] === label);
       for (let i = 0; i < keys.length; i++) {
-        output[i].data.push(data ? data[keys[i]] : 0);
+        output[i].data.push(data ? data[keys[i]] : null);
       }
     }
 
