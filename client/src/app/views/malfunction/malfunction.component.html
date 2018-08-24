@@ -71,19 +71,23 @@
                 [legend]="chartLegend" [chartType]="'bar'"></canvas>
           </div>
           <div class="row mt-2">
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-xl-6 mt-2">
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                <canvas baseChart class="chart" *ngIf="pieErrorCodesLabels && pieErrorCodesLabels.length > 0"
+                  [data]="pieErrorCodesTimes" [labels]="pieErrorCodesLabels" [chartType]="'pie'"
+                  [options]="pieOptions"
                   (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
               </div>
-              <div class="text-center small">Last two weeks error codes %</div>
+              <div class="text-center small">Last two weeks error codes % (top {{ topNum }})</div>
             </div>
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-xl-6 mt-2">
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                <canvas baseChart class="chart" *ngIf="pieErrorStationsLabels && pieErrorStationsLabels.length > 0"
+                  [data]="pieErrorStationsTimes" [labels]="pieErrorStationsLabels" [chartType]="'pie'"
+                  [options]="pieOptions"
                   (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
               </div>
-              <div class="text-center small">Last two weeks error stations %</div>
+              <div class="text-center small">Last two weeks error stations % (top {{ topNum }})</div>
             </div>
           </div>
         </div>

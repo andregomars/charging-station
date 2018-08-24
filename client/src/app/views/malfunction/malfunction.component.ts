@@ -14,11 +14,12 @@ import { DataService } from '../../services/data.service';
 })
 export class MalfunctionComponent implements OnInit {
   malfunctions$: Observable<any>;
+  topNum = 3;
 
-  // Pie
-  public pieChartLabels: string[] = ['ERR23', 'ERR36', 'ERR51'];
-  public pieChartData: number[] = [300, 500, 100];
-  public pieChartType = 'pie';
+  public pieErrorCodesLabels: string[];
+  public pieErrorCodesTimes: number[];
+  public pieErrorStationsLabels: string[];
+  public pieErrorStationsTimes: number[];
 
   chartLegend = false;
   chartType = 'line';
@@ -26,8 +27,15 @@ export class MalfunctionComponent implements OnInit {
   labelsAlertTimes2weeks: string[];
   dataAlertTimes2weeks = new Array<any>();
 
+  // pie
+  pieOptions = {
+    legend: {
+      position: 'right'
+    }
+  };
+
   // Alert times 2weeks start:
-  public optionsAlertTimes2weeks: any = {
+  optionsAlertTimes2weeks: any = {
     tooltips: {
       enabled: false,
       custom: CustomTooltips,
@@ -94,33 +102,63 @@ export class MalfunctionComponent implements OnInit {
 
   ngOnInit() {
     this.initLabels();
-
     this.malfunctions$ = this.dataService.getMalfunctions();
-    this.loadAlertTimes2weeksData();
+    this.loadData();
   }
 
-  private loadAlertTimes2weeksData() {
+  private loadData() {
     this.dataService.getMalfunctions().subscribe((data: any[]) => {
-      const dateFormatedData = data.map(r => {
+
+      // chart data
+      const dateFormatedData = data.map(x => {
         return {
-          date: moment(r.update_time).format('YYYY-MM-DD'),
+          date: moment(x.update_time).format('YYYY-MM-DD'),
           times: 1
         };
       });
+      const aggregatedTimesByDate = this.getAggregateData(dateFormatedData, 'date', 'times');
+      this.dataAlertTimes2weeks =
+        this.fillChartData(this.labelsAlertTimes2weeks, aggregatedTimesByDate, 'date', ['times']);
 
-      let aggregatedData = [];
-      dateFormatedData.forEach(current => {
-        const existed = aggregatedData.find(a => a.date === current.date);
-        if (existed) {
-          existed.times += current.times;
+      // pie of error codes
+      const errorCodesData = data.map(x => {
+        return {
+          error_code: x.error_code,
+          times: 1
+        };
+      });
+      const aggregatedCodesOfError = this.getAggregateData(errorCodesData, 'error_code', 'times');
+      this.pieErrorCodesLabels = aggregatedCodesOfError.map(x => x.error_code);
+      this.pieErrorCodesTimes = aggregatedCodesOfError.map(x => x.times);
+
+      // pie of error codes
+      const errorStationsData = data.map(x => {
+        return {
+          station_id: x.station_id,
+          times: 1
+        };
+      });
+      const aggregatedStationsOfError = this.getAggregateData(errorStationsData, 'station_id', 'times');
+      aggregatedStationsOfError.sort((a, b) => b.times - a.times).splice(this.topNum);
+      this.pieErrorStationsLabels = aggregatedStationsOfError.map(x => x.station_id);
+      this.pieErrorStationsTimes = aggregatedStationsOfError.map(x => x.times);
+
+    });
+  }
+
+  private getAggregateData(sourcList: any[], keyName: string, valueName: string): any[] {
+      let output = [];
+      sourcList.forEach(current => {
+        const scannedObj = output.find(sourceObj => sourceObj[keyName] === current[keyName]);
+
+        if (scannedObj) {
+          scannedObj[valueName] += current[valueName];
         } else {
-          aggregatedData = [...aggregatedData, current];
+          output = [...output, current];
         }
       });
 
-      this.dataAlertTimes2weeks =
-        this.fillChartData(this.labelsAlertTimes2weeks, aggregatedData, 'date', ['times']);
-    });
+      return output;
   }
 
   private initLabels() {
@@ -149,16 +187,12 @@ export class MalfunctionComponent implements OnInit {
     return output;
   }
 
-  // public random(min: number, max: number) {
-  //   return Math.floor(Math.random() * (max - min + 1) + min);
-  // }
-
   // events
   public chartClicked(e: any): void {
-    console.log(e);
+    // console.log(e);
   }
 
   public chartHovered(e: any): void {
-    console.log(e);
+    // console.log(e);
   }
 }
