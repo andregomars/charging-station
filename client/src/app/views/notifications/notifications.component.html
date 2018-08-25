@@ -43,7 +43,7 @@
               <tr *ngFor="let n of notifications$ | async">
                 <td>
                   <div class="small text-muted text-truncated">
-                    <a [href]="n.content_url">{{n.content_url}}</a>
+                    <a [href]="n.content_url" target="_blank">{{n.content_url}}</a>
                   </div>
                 </td>
                 <td>
@@ -56,14 +56,12 @@
             </tbody>
           </table>
           <ul class="pagination mt-2">
-            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="#" (click)="false">Prev</a></li>
+            <li class="page-item active"><a class="page-link" href="#" (click)="false">1</a></li>
+            <li class="page-item"><a class="page-link" href="" (click)="false">2</a></li>
+            <li class="page-item"><a class="page-link" href="" (click)="false">3</a></li>
+            <li class="page-item"><a class="page-link" href="" (click)="false">4</a></li>
+            <li class="page-item"><a class="page-link" href="" (click)="false">Next</a></li>
           </ul>
         </div>
       </div>

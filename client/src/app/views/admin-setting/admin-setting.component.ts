@@ -16,7 +16,7 @@ export class AdminSettingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadData();
+    // this.loadData();
   }
 
   private loadData() {

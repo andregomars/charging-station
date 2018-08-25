@@ -40,57 +40,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-12 col-md-6 col-xl-3">
-      <div class="card">
-        <div class="card-header">
-          Default limitations
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="cs-input-group-setting">
-              <div>
-                <span>
-                  Max chargers
-                </span>
-              </div>
-              <input type="text" value="" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="cs-input-group-setting">
-              <div>
-                <span>
-                  Max current
-                </span>
-              </div>
-              <input type="text" value="" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="cs-input-group-setting">
-              <div>
-                <span>
-                  Max kW
-                </span>
-              </div>
-              <input type="text" value="" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="cs-input-group-setting">
-              <div>
-                <span>
-                  Daily Max kWh
-                </span>
-              </div>
-              <input type="text" value="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-xl-3">
       <div class="card">
         <div class="card-header">
           Notification
@@ -153,13 +102,88 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+          <div class="row mt-2">
+            <div class="col">
+              <div class="row">
+                <div class="col text-muted">aaa@test.com</div>
+                <div class="col text-right">
+                   <label class="switch switch-outline-primary-alt switch-sm">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-muted">andre@test.com</div>
+                <div class="col text-right">
+                    <label class="switch switch-outline-primary-alt switch-sm">
+                     <input type="checkbox" class="switch-input" checked>
+                     <span class="switch-slider"></span>
+                   </label>
+                 </div>
+              </div>
+              <div class="row">
+                <div class="col text-muted">robinyang119@gmail.com</div>
+                <div class="col text-right">
+                    <label class="switch switch-outline-primary-alt switch-sm">
+                     <input type="checkbox" class="switch-input">
+                     <span class="switch-slider"></span>
+                   </label>
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          Default limitations
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max chargers
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max current
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Max kW
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="cs-input-group-setting">
+              <div>
+                <span>
+                  Daily Max kWh
+                </span>
+              </div>
+              <input type="text" value="" />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card">
         <div class="card-header">
           Report
@@ -186,14 +210,77 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <textarea class="w-100 border" name="" id="" cols="30" rows="10"></textarea>
+          <div class="row mt-2">
+            <div class="col">
+              <div class="row">
+                <div class="col text-muted">aaa@test.com</div>
+                <div class="col text-right">
+                    <label class="switch switch-outline-primary-alt switch-sm">
+                    <input type="checkbox" class="switch-input">
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-muted">andre@test.com</div>
+                <div class="col text-right">
+                    <label class="switch switch-outline-primary-alt switch-sm">
+                      <input type="checkbox" class="switch-input" checked>
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col text-muted">robinyang119@gmail.com</div>
+                <div class="col text-right">
+                    <label class="switch switch-outline-primary-alt switch-sm">
+                      <input type="checkbox" class="switch-input">
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </div>  
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="card">
+            <div class="card-header">
+              Command setting
+            </div>
+            <div class="card-body">
+              <div class="row">
+              <table class="table table-responsive-sm table-striped table-hover table-outline mb-0">
+                <thead class="text-white bg-primary">
+                  <tr>
+                    <th>Command</th>
+                    <th>Start bit</th>
+                    <th>Length</th>
+                    <th>Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of commands$ | async">
+                    <td>
+                      <div class="small text-muted">{{c.command_name}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{c.start_bit}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{c.length}}</div>
+                    </td>
+                    <td>
+                      <div class="small text-muted">{{c.data}}</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
     </div>
   </div>
-  <div class="row">
-    <router-outlet></router-outlet>
-  </div>
+
 </div>
