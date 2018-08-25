@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
+  alert: Alert;
 
   constructor(
     private authService: AuthService
@@ -21,4 +22,23 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.signIn(this.email, this.password);
   }
+
+  forget() {
+    if (!this.email || this.email.length < 1) {
+      this.alert = {
+        type: 'danger',
+        message: 'Email is required to reset your password'
+      };
+    } else {
+      this.alert = {
+        type: 'success',
+        message: 'Well done! Your password reset link is sent to your email'
+      };
+    }
+  }
+}
+
+export interface Alert {
+    type: string;
+    message: string;
 }

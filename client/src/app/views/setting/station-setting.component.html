@@ -11,6 +11,7 @@
                 <th>Identification ID</th>
                 <th>Priority</th>
                 <th>Spec</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -30,10 +31,135 @@
                 <td>
                   <div class="small text-muted">{{s.spec}}</div>
                 </td>
+                <td>
+                  <div class="d-flex justify-content-around">
+                    <a href="" (click)="stationEditModal.show();false">
+                      <i class="fa fa-edit text-secendary"></i>
+                    </a>
+                    <a href="" (click)="stationRemoveModal.show();false">
+                      <i class="fa fa-times text-danger"></i>
+                    </a>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
+          <div class="row my-3">
+            <div class="col text-center">
+              <button class="btn btn-primary cs-submit" data-toggle="modal" (click)="stationAddModal.show()">Add Station</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div bsModal #stationAddModal="bs-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-primary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Station</h4>
+        <button type="button" class="close" (click)="stationAddModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body h-50">
+        <p class="text-muted">Add new station</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">VIN</span>
+          </div>
+          <input type="text" class="form-control" placeholder="VIN">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">ID</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Identification ID">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Priority</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Priority">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Spec</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Specification">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="stationAddModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div bsModal #stationEditModal="bs-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-primary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Station</h4>
+        <button type="button" class="close" (click)="stationAddModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body h-50">
+          <p class="text-muted">Edit station VIN, ID, priorty or specification</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">VIN</span>
+          </div>
+          <input type="text" class="form-control" placeholder="VIN">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">ID</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Identification ID">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Priority</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Priority">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Spec</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Specification">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="stationEditModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div bsModal #stationRemoveModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Remove Station</h4>
+        <button type="button" class="close" (click)="stationRemoveModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to remove the station ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="stationRemoveModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-danger">Remove</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

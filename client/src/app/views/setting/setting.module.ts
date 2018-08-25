@@ -12,6 +12,7 @@ import { SettingComponent } from './setting.component';
 import { MainSettingComponent } from './main-setting.component';
 import { StationSettingComponent } from './station-setting.component';
 import { VehicleSettingComponent } from './vehicle-setting.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { VehicleSettingComponent } from './vehicle-setting.component';
     ChartsModule,
     UiSwitchModule,
     BsDropdownModule,
+    ModalModule.forRoot(),
     ButtonsModule.forRoot()
   ],
   declarations: [

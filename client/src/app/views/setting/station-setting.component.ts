@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class StationSettingComponent implements OnInit {
   settings$: Observable<any>;
+  stationAddModal: any;
 
   constructor(
     private dataService: DataService

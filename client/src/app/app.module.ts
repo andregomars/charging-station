@@ -48,6 +48,7 @@ import {
 import { AppRoutingModule } from './app.routing';
 
 // Import 3rd party components
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
@@ -64,6 +65,7 @@ import { environment } from '../environments/environment';
     AppHeaderModule,
     AppSidebarModule,
     PerfectScrollbarModule,
+    AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,

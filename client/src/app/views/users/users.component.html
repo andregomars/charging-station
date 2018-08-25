@@ -30,10 +30,10 @@
                 </td>
                 <td>
                   <div class="d-flex justify-content-around">
-                    <a href="" (click)="false">
+                    <a href="" (click)="userEditModal.show();false">
                       <i class="fa fa-edit text-secendary"></i>
                     </a>
-                    <a href="" (click)="false">
+                    <a href="" (click)="userRemoveModal.show();false">
                       <i class="fa fa-times text-danger"></i>
                     </a>
                   </div>
@@ -41,9 +41,114 @@
               </tr>
             </tbody>
           </table>
-
+          <div class="row my-3">
+            <div class="col text-center">
+              <button class="btn btn-primary cs-submit" data-toggle="modal" (click)="userAddModal.show()">Add User</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div bsModal #userAddModal="bs-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-primary" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add User</h4>
+          <button type="button" class="close" (click)="userAddModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body h-50">
+          <p class="text-muted">Add new user account</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-user"></i></span>
+            </div>
+            <input type="text" [(ngModel)]="username" class="form-control" placeholder="Username">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" [(ngModel)]="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-lock"></i></span>
+            </div>
+            <div class="form-control pb-0">
+              <ui-switch size="small" checked></ui-switch>
+              <label class="mb-0 ml-3 align-top">Admin</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="userAddModal.hide()">Cancel</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div bsModal #userEditModal="bs-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-primary" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit User</h4>
+          <button type="button" class="close" (click)="userAddModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body h-50">
+          <p class="text-muted">Change user name or permission</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-user"></i></span>
+            </div>
+            <input type="text" [(ngModel)]="username" class="form-control" placeholder="andre">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" [(ngModel)]="email" class="form-control" placeholder="Email" disabled>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-lock"></i></span>
+            </div>
+            <div class="form-control pb-0">
+              <ui-switch size="small" checked></ui-switch>
+              <label class="mb-0 ml-3 align-top">Admin</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="userEditModal.hide()">Cancel</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+<div bsModal #userRemoveModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Remove User</h4>
+        <button type="button" class="close" (click)="userRemoveModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to remove user <strong>aaa@test.com</strong> ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="userRemoveModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-danger">Remove</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
