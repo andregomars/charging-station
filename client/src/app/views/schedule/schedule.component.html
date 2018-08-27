@@ -134,6 +134,7 @@
               <th>Daily Max kWh</th>
               <th>User</th>
               <th>Updated</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -172,7 +173,17 @@
                 <div class="small text-muted">{{s.user_code}}</div>
               </td>
               <td>
-                <div class="small text-muted">{{s.update_time}}</div>
+                <div class="small text-muted">{{s.update_time | date: 'MM/dd'}}</div>
+              </td>
+              <td>
+                <div class="d-flex justify-content-around">
+                  <a href="" (click)="false;">
+                    <i class="fa fa-edit text-secendary"></i>
+                  </a>
+                  <a href="" (click)="false;">
+                    <i class="fa fa-times text-danger"></i>
+                  </a>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -180,7 +191,7 @@
       </div>
       <div class="row my-3">
         <div class="col text-center">
-          <button class="btn btn-primary cs-submit">Save</button>
+          <button class="btn btn-primary cs-submit-100">Save</button>
         </div>
       </div>
     </div>

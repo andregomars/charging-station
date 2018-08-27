@@ -1,12 +1,12 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-12 col-lg-6">
-      <div class="card">
+    <div class="col-12 col-lg-3">
+      <div class="card cs-card-v300">
         <div class="card-header">
           Data transfer
         </div>
-        <div class="card-body">
-          <div class="row">
+        <div class="card-body d-flex flex-column align-items-end">
+          <div class="row align-self-start">
             <div class="cs-input-group-adminsetting">
               <div>
                 <span>
@@ -16,7 +16,7 @@
               <input type="text" value="10s" />
             </div>
           </div>
-          <div class="row">
+          <div class="row align-self-start">
             <div class="cs-input-group-adminsetting">
               <div>
                 <span>
@@ -26,16 +26,21 @@
               <input type="text" value="60s" />
             </div>
           </div>
+          <div class="row align-self-center mt-auto">
+            <div class="col text-center">
+              <button class="btn btn-primary cs-submit-100">Save</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6">
-      <div class="card">
+    <div class="col-12 col-lg-3">
+      <div class="card cs-card-v300">
         <div class="card-header">
           Cloud server
         </div>
-        <div class="card-body">
-          <div class="row">
+        <div class="card-body d-flex flex-column align-items-end">
+          <div class="row align-self-start">
             <div class="cs-input-group">
               <div>
                 <span>
@@ -44,10 +49,10 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row align-self-stretch">
             <input type="text" class="form-control" value="">
           </div>
-          <div class="row">
+          <div class="row align-self-start">
             <div class="cs-input-group-switch">
               <div>
                 <span>
@@ -59,7 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row align-self-start">
             <div class="cs-input-group-switch">
               <div>
                 <span>
@@ -71,46 +76,13 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="col-12 col-lg-6">
-      <div class="card">
-        <div class="card-header">
-          Command setting
-        </div>
-        <div class="card-body">
-          <div class="row">
-          <table class="table table-responsive-sm table-striped table-hover table-outline mb-0">
-            <thead class="text-white bg-primary">
-              <tr>
-                <th>Command</th>
-                <th>Start bit</th>
-                <th>Length</th>
-                <th>Data</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let c of commands$ | async">
-                <td>
-                  <div class="small text-muted">{{c.command_name}}</div>
-                </td>
-                <td>
-                  <div class="small text-muted">{{c.start_bit}}</div>
-                </td>
-                <td>
-                  <div class="small text-muted">{{c.length}}</div>
-                </td>
-                <td>
-                  <div class="small text-muted">{{c.data}}</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="row align-self-center mt-auto">
+            <div class="col text-center">
+              <button class="btn btn-primary cs-submit-100">Save</button>
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-
+    </div>
   </div>
 </div>

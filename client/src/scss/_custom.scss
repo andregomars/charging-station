@@ -15,7 +15,28 @@ $input-group-height: 38px;
 
 .cs-submit {
     @extend .shadow;
+}
+
+.cs-submit-100 {
+    @extend .cs-submit;
     width: 100px;
+}
+
+.cs-submit-150 {
+    @extend .cs-submit;
+    width: 150px;
+}
+
+.cs-card-v300 {
+    height: 300px;
+}
+
+.cs-card-v500 {
+    height: 500px;
+}
+
+.cs-card-v800 {
+    height: 500px;
 }
 
 .cs-input-group {

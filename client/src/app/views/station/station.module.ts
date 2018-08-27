@@ -12,6 +12,7 @@ import { StationRoutingModule } from './station-routing.module';
 import { DataService } from '../../services/data.service';
 import { StationOutletComponent } from './station-outlet.component';
 import { StationListComponent } from './station-list.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { StationListComponent } from './station-list.component';
     NgxGaugeModule,
     BsDropdownModule,
     QRCodeModule,
+    ModalModule.forRoot(),
     ButtonsModule.forRoot()
   ],
   declarations: [

@@ -12,13 +12,6 @@ $button-force-width: 100px;
     width: $input-text-width-station !important;
 }
 
-.cs-force-button {
-    @extend .btn;
-    @extend .btn-primary;
-    @extend .shadow;
-    width: $button-force-width;
-}
-
 .cs-card-info {
     @extend .card;
     height: 550px;

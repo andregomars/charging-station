@@ -128,9 +128,7 @@
           </div>
           <div class="row mt-5">
             <div class="col-12 col-md-4">
-              <button class="cs-force-button">
-                Force Start
-              </button>
+              <button class="btn btn-primary cs-submit-100" data-toggle="modal" (click)="forceOperationModal.show()">Force Start</button>
             </div>
             <div class="col-12 col-md-8">
               <small>
@@ -140,9 +138,7 @@
           </div>
           <div class="row mt-3">
             <div class="col-12 col-md-4">
-              <button class="cs-force-button">
-                Force Pause
-              </button>
+              <button class="btn btn-primary cs-submit-100" data-toggle="modal" (click)="forceOperationModal.show()">Force Pause</button>
             </div>
             <div class="col-12 col-md-8">
               <small>
@@ -152,9 +148,7 @@
           </div>
           <div class="row my-3">
             <div class="col-12 col-md-4">
-              <button class="cs-force-button">
-                Force Stop
-              </button>
+              <button class="btn btn-primary cs-submit-100" data-toggle="modal" (click)="forceOperationModal.show()">Force Stop</button>
             </div>
             <div class="col-12 col-md-8">
               <small>
@@ -226,7 +220,9 @@
                 </div>
               </div>
               <input type="text" class="form-control" value="">
-              <button class="btn btn-primary shadow w-100 mt-2">Update Program</button>
+              <label class="btn btn-primary mt-2 shadow">
+                  Update Program <input type="file" hidden>
+              </label>
               <div class="cs-input-group mt-auto">
                 <div class="w-100">
                   <span class="w-100">
@@ -308,3 +304,24 @@
     </div>
   </div>
 </div>
+
+<div bsModal #forceOperationModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-danger" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Confirm</h4>
+        <button type="button" class="close" (click)="forceOperationModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Please input the action name to confirm this forced operation!</p>
+        <input type="text" class="form-contrl" placeholder="e.g. Force Start">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="forceOperationModal.hide()">Cancel</button>
+        <button type="button" class="btn btn-danger">Confirm</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
