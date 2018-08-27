@@ -1,37 +1,121 @@
-[
-    {
-        "statistics_id": 1,
-        "station_id": 5001,
-        "charged_kwh": 3123,
-        "charged_hours": 500,
-        "charged_times": 28
-    },
-    {
-        "statistics_id": 2,
-        "station_id": 5002,
-        "charged_kwh": 313,
-        "charged_hours": 50,
-        "charged_times": 8
-    },
-    {
-        "statistics_id": 3,
-        "station_id": 5001,
-        "charged_kwh": 3123,
-        "charged_hours": 500,
-        "charged_times": 28
-    },
-    {
-        "statistics_id": 4,
-        "station_id": 5001,
-        "charged_kwh": 3123,
-        "charged_hours": 500,
-        "charged_times": 28
-    },
-    {
-        "statistics_id": 5,
-        "station_id": 5001,
-        "charged_kwh": 3123,
-        "charged_hours": 500,
-        "charged_times": 28
-    }
-]
+[ {
+  "charged_hours" : 4.2,
+  "charged_kwh" : 323.8,
+  "charged_times" : 4,
+  "station_id" : "A01",
+  "statistics_id" : 1
+}, {
+  "charged_hours" : 2.5,
+  "charged_kwh" : 182.2,
+  "charged_times" : 2,
+  "station_id" : "A02",
+  "statistics_id" : 2
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A03",
+  "statistics_id" : 3
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A04",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 4.6,
+  "charged_kwh" : 358.7,
+  "charged_times" : 4,
+  "station_id" : "A05",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 3.2,
+  "charged_kwh" : 268.5,
+  "charged_times" : 3,
+  "station_id" : "A06",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 1.5,
+  "charged_kwh" : 152.0,
+  "charged_times" : 2,
+  "station_id" : "A07",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A08",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A09",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 2.1,
+  "charged_kwh" : 160.8,
+  "charged_times" : 3,
+  "station_id" : "A10",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 3.5,
+  "charged_kwh" : 286.3,
+  "charged_times" : 3,
+  "station_id" : "A11",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 4.2,
+  "charged_kwh" : 344.5,
+  "charged_times" : 4,
+  "station_id" : "A12",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0.5,
+  "charged_kwh" : 45,
+  "charged_times" : 1,
+  "station_id" : "A13",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0.6,
+  "charged_kwh" : 52,
+  "charged_times" : 1,
+  "station_id" : "A14",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 4.2,
+  "charged_kwh" : 352.5,
+  "charged_times" : 3,
+  "station_id" : "A15",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A16",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 2.3,
+  "charged_kwh" : 192.1,
+  "charged_times" : 2,
+  "station_id" : "A17",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A18",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A19",
+  "statistics_id" : 4
+}, {
+  "charged_hours" : 0,
+  "charged_kwh" : 0,
+  "charged_times" : 0,
+  "station_id" : "A20",
+  "statistics_id" : 5
+} ]
