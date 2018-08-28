@@ -1,32 +1,101 @@
-[
-    {
-        "id": 1,
-        "vehicle_id": 12312,
-        "vehicle_vin": 1234567890123,
-        "spec": "vehicle power and voltage"
-    },
-    {
-        "id": 2,
-        "vehicle_id": 12312,
-        "vehicle_vin": 1234567890123,
-        "spec": "vehicle power and voltage"
-    },
-    {
-        "id": 3,
-        "vehicle_id": 12312,
-        "vehicle_vin": 1234567890123,
-        "spec": "vehicle power and voltage"
-    },
-    {
-        "id": 4,
-        "vehicle_id": 12312,
-        "vehicle_vin": 1234567890123,
-        "spec": "vehicle power and voltage"
-    },
-    {
-        "id": 5,
-        "vehicle_id": 12312,
-        "vehicle_vin": 1234567890123,
-        "spec": "vehicle power and voltage"
-    }
-]
+[ {
+  "id" : 1,
+  "spec" : "EV",
+  "vehicle_id" : 5601,
+  "vehicle_vin" : "L71OKZVa7ICimrPWS4vrfQ"
+}, {
+  "id" : 2,
+  "spec" : "EV",
+  "vehicle_id" : 5602,
+  "vehicle_vin" : "fZf5zlu4bF9FbLoMWpwvmU"
+}, {
+  "id" : 3,
+  "spec" : "EV",
+  "vehicle_id" : 5603,
+  "vehicle_vin" : "o0mOmwDVM3GNL1PfDKsSQk"
+}, {
+  "id" : 4,
+  "spec" : "EV",
+  "vehicle_id" : 5604,
+  "vehicle_vin" : "Pvv4c6EEZESywOOg35HQdG"
+}, {
+  "id" : 5,
+  "spec" : "EV",
+  "vehicle_id" : 5605,
+  "vehicle_vin" : "jX3jcRaN8DTXGXPgeN2Xkw"
+}, {
+  "id" : 2,
+  "spec" : "EV",
+  "vehicle_id" : 5606,
+  "vehicle_vin" : "JAJzcrcrNgvuX9Kx8NxZRS"
+}, {
+  "id" : 3,
+  "spec" : "EV",
+  "vehicle_id" : 5607,
+  "vehicle_vin" : "ZSLy9ZtnjmUoa9Rf2TBbXD"
+}, {
+  "id" : 4,
+  "spec" : "EV",
+  "vehicle_id" : 5608,
+  "vehicle_vin" : "XJQfIvi2tBPWefORB8SAvo"
+}, {
+  "id" : 5,
+  "spec" : "EV",
+  "vehicle_id" : 5609,
+  "vehicle_vin" : "yhmq4R4HWbV1hGIcFdX93R"
+}, {
+  "id" : 2,
+  "spec" : "EV",
+  "vehicle_id" : 5610,
+  "vehicle_vin" : "XxOM59gkVFUuilXO3vGQBk"
+}, {
+  "id" : 3,
+  "spec" : "EV",
+  "vehicle_id" : 5611,
+  "vehicle_vin" : "Mrn4HuHO1shb4x4o9Zezlv"
+}, {
+  "id" : 4,
+  "spec" : "EV",
+  "vehicle_id" : 5612,
+  "vehicle_vin" : "wfr0zOl2tpGERaqwVMTYWW"
+}, {
+  "id" : 5,
+  "spec" : "EV",
+  "vehicle_id" : 5613,
+  "vehicle_vin" : "q92nRPw9XmhMMFl4sDEBfC"
+}, {
+  "id" : 2,
+  "spec" : "EV",
+  "vehicle_id" : 5614,
+  "vehicle_vin" : "vpLT2g7JlVzIOYqKSfOjTm"
+}, {
+  "id" : 3,
+  "spec" : "EV",
+  "vehicle_id" : 5615,
+  "vehicle_vin" : "fu63tQT9SFraZ5ekMuPbES"
+}, {
+  "id" : 4,
+  "spec" : "EV",
+  "vehicle_id" : 5616,
+  "vehicle_vin" : "PeWsOx4kTVRTP6tHuj8chZ"
+}, {
+  "id" : 5,
+  "spec" : "EV",
+  "vehicle_id" : 5617,
+  "vehicle_vin" : "gwS8UJ6XjZCtNl6K9sms7n"
+}, {
+  "id" : 2,
+  "spec" : "EV",
+  "vehicle_id" : 5618,
+  "vehicle_vin" : "JShl0VVLfrNNmPSULm8IK0"
+}, {
+  "id" : 3,
+  "spec" : "EV",
+  "vehicle_id" : 5619,
+  "vehicle_vin" : "rT5NhPoAGMW4YEaXuYypK4"
+}, {
+  "id" : 4,
+  "spec" : "EV",
+  "vehicle_id" : 5620,
+  "vehicle_vin" : "WWziLJNzc1OLuez0oTK7dz"
+} ]

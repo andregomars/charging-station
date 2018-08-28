@@ -1,42 +1,141 @@
-[
-    {
-        "id": 1,
-        "station_id": 5001,
-        "station_vin": "012345678901",
-        "identification_id": "1dzdf41",
-        "priority": 99,
-        "spec": "power and voltage"
-    },
-    {
-        "id": 2,
-        "station_id": 5001,
-        "station_vin": "012345678901",
-        "identification_id": "1dzdf41",
-        "priority": 99,
-        "spec": "power and voltage"
-    },
-    {
-        "id": 3,
-        "station_id": 5001,
-        "station_vin": "012345678901",
-        "identification_id": "1dzdf41",
-        "priority": 99,
-        "spec": "power and voltage"
-    },
-    {
-        "id": 4,
-        "station_id": 5001,
-        "station_vin": "012345678901",
-        "identification_id": "1dzdf41",
-        "priority": 99,
-        "spec": "power and voltage"
-    },
-    {
-        "id": 5,
-        "station_id": 5001,
-        "station_vin": "012345678901",
-        "identification_id": "1dzdf41",
-        "priority": 99,
-        "spec": "power and voltage"
-    }
-]
+[ {
+  "id" : 1,
+  "identification_id" : "121",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A01",
+  "station_vin" : "OeT4yOz6ZjBSVkV7"
+}, {
+  "id" : 2,
+  "identification_id" : "122",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A02",
+  "station_vin" : "1GoBi6RPtLFUaVTI"
+}, {
+  "id" : 2,
+  "identification_id" : "123",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A03",
+  "station_vin" : "8QF3rtYnAYpMKzBv"
+}, {
+  "id" : 2,
+  "identification_id" : "124",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A04",
+  "station_vin" : "jvlay62m6sMbEnIR"
+}, {
+  "id" : 2,
+  "identification_id" : "125",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A05",
+  "station_vin" : "AFtjdgO90WAuI765"
+}, {
+  "id" : 2,
+  "identification_id" : "126",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A06",
+  "station_vin" : "xST57aVHX1iuXPrZ"
+}, {
+  "id" : 2,
+  "identification_id" : "127",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A07",
+  "station_vin" : "7fZfWhGe922I3wfm"
+}, {
+  "id" : 2,
+  "identification_id" : "128",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A08",
+  "station_vin" : "KWtAg35fQKw4a4Ug"
+}, {
+  "id" : 2,
+  "identification_id" : "129",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A09",
+  "station_vin" : "Nn5DRxd3ewJt2vQx"
+}, {
+  "id" : 2,
+  "identification_id" : "130",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A10",
+  "station_vin" : "aVFL22bv3BWNvpCN"
+}, {
+  "id" : 2,
+  "identification_id" : "131",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A11",
+  "station_vin" : "hJdvT4eEM3RK0kLA"
+}, {
+  "id" : 2,
+  "identification_id" : "132",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A12",
+  "station_vin" : "cPbhyCZjkuXhO9Gq"
+}, {
+  "id" : 2,
+  "identification_id" : "133",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A13",
+  "station_vin" : "FfyOVBq0bHAJ8cor"
+}, {
+  "id" : 2,
+  "identification_id" : "134",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A14",
+  "station_vin" : "o14mY7MNLrr8m1F8"
+}, {
+  "id" : 2,
+  "identification_id" : "135",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A15",
+  "station_vin" : "HnWLfBcOKSj52HsU"
+}, {
+  "id" : 3,
+  "identification_id" : "136",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A16",
+  "station_vin" : "xvdnAMYHhObfVQWb"
+}, {
+  "id" : 4,
+  "identification_id" : "137",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A17",
+  "station_vin" : "KqwbjD84e1R38rP1"
+}, {
+  "id" : 4,
+  "identification_id" : "138",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A18",
+  "station_vin" : "VabHGKEJ9UEfQOhG"
+}, {
+  "id" : 4,
+  "identification_id" : "139",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A19",
+  "station_vin" : "qXjVRpcscoEqBDNZ"
+}, {
+  "id" : 5,
+  "identification_id" : "140",
+  "priority" : 99,
+  "spec" : "power and voltage",
+  "station_id" : "A20",
+  "station_vin" : "weEdBe8Vw5pVzz3h"
+} ]
