@@ -15,7 +15,7 @@
     "start": "ng serve --open",
     "build": "ng build",
     "deploy": "ng build --prod",
-    "postdeploy": "cd .. && firebase deploy && cd client",
+    "//postdeploy": "cd .. && firebase deploy && cd client",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
